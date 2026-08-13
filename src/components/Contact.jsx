@@ -46,6 +46,14 @@ const Contact = () => {
       url: "tel:+14389348285",
       icon: <Phone className="w-6 h-6" />,
       color: "hover:text-primary"
+    },
+    {
+      name: "Resume",
+      value: "Download PDF",
+      url: "/resume.pdf",
+      icon: <Download className="w-6 h-6" />,
+      color: "hover:text-primary",
+      download: "Isadora_Santos_Resume.pdf"
     }
   ];
 
@@ -71,8 +79,9 @@ const Contact = () => {
             <motion.a
               key={index}
               href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              download={link.download || undefined}
+              target={link.download ? undefined : "_blank"}
+              rel={link.download ? undefined : "noopener noreferrer"}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -89,23 +98,6 @@ const Contact = () => {
             </motion.a>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 text-center flex justify-center"
-        >
-          <a
-            href="/resume.pdf"
-            download
-            className="group flex items-center gap-2 px-8 py-4 bg-primary/10 border border-primary/50 text-primary font-bold rounded-lg hover:bg-primary hover:text-black transition-all hover:shadow-[0_0_20px_rgba(0,240,255,0.4)]"
-          >
-            <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            Download Resumé
-          </a>
-        </motion.div>
       </div>
     </section>
   );

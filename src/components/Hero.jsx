@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileText, ArrowRight } from 'lucide-react';
+import { FileText, ArrowRight, Mail } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -66,11 +66,19 @@ const Hero = () => {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="#contact"
+            href="/resume.pdf"
+            download="Isadora_Santos_Resume.pdf"
             className="flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/50 text-primary font-bold rounded-lg hover:bg-primary/10 transition-all hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] w-full sm:w-auto justify-center"
           >
             <FileText className="w-5 h-5" />
-            Contact Me
+            Resume
+          </a>
+          <a
+            href="#contact"
+            className="flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/50 text-primary font-bold rounded-lg hover:bg-primary/10 transition-all hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] w-full sm:w-auto justify-center"
+          >
+            <Mail className="w-5 h-5" />
+            Contact
           </a>
         </motion.div>
       </div>

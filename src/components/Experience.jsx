@@ -77,14 +77,14 @@ const Experience = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className={`mb-12 relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+              className={`group mb-12 relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
                 } items-center justify-between w-full`}
             >
               {/* Timeline dot */}
               <div
-                className={`absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 rounded-full ${item.active
+                className={`absolute left-[-5px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 rounded-full transition-all duration-300 ${item.active
                   ? 'bg-primary shadow-[0_0_15px_rgba(0,240,255,1)] animate-pulse'
-                  : 'bg-gray-500'
+                  : 'bg-gray-500 group-hover:bg-primary group-hover:shadow-[0_0_10px_rgba(0,240,255,0.5)]'
                   }`}
               ></div>
 
@@ -92,8 +92,8 @@ const Experience = () => {
                 <div
                   className={`p-6 rounded-xl border ${item.active
                     ? 'bg-primary/5 border-primary/30 shadow-[0_0_20px_rgba(0,240,255,0.1)]'
-                    : 'glass'
-                    } transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_5px_20px_rgba(0,0,0,0.3)]`}
+                    : 'glass group-hover:border-primary/30 group-hover:bg-primary/5 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.15)]'
+                    } transition-all duration-300 hover:-translate-y-1`}
                 >
                   <div className="flex flex-col mb-4">
                     <span className={`text-sm font-semibold tracking-wider mb-2 ${item.active ? 'text-primary text-glow' : 'text-gray-400'}`}>
