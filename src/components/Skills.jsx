@@ -16,7 +16,17 @@ const skillCategories = [
   },
   {
     title: "AI Tools & Agents",
-    skills: ["LangChain", "ChromaDB", "OpenAI API", "Hugging Face"],
+    skills: [
+      "LangChain",
+      "LangGraph",
+      "LangSmith",
+      "Claude",
+      "Cursor",
+      "Antigravity",
+      "OpenAI API",
+      "ChromaDB",
+      "Hugging Face"
+    ],
     colSpan: "col-span-1 md:col-span-2 lg:col-span-2",
     delay: 0.3
   },
