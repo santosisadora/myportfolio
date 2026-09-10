@@ -12,7 +12,7 @@ const projects = [
       "ChromaDB Vector Store",
       "LangChain Orchestration"
     ],
-    github: "#",
+    github: "https://github.com/santosisadora/vuln-rag-agent",
     demo: "#"
   },
   {
