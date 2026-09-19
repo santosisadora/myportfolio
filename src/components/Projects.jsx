@@ -26,7 +26,7 @@ const projects = [
       "Trivy Container Security Scanning",
       "MLflow & PostgreSQL Infrastructure"
     ],
-    github: "#",
+    github: "https://github.com/santosisadora/secure-mlops-pipeline",
     demo: "#"
   },
   {
