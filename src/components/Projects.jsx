@@ -17,13 +17,14 @@ const projects = [
     demo: "/vuln-rag-agent-demo.mp4"
   },
   {
-    title: "LLM Security Guardrail API",
+    title: "Secure MLOps Pipeline",
     icon: <Shield className="w-8 h-8 text-primary" />,
-    description: "A robust security layer that intercepts and sanitizes inputs/outputs for LLM applications, protecting against adversarial attacks.",
+    image: "/mlflow-secure-mlops-pipeline-demo-image.png",
+    description: "A production-grade, security-first CI/CD pipeline demonstrating enterprise best practices for operationalizing machine learning models with automated vulnerability management.",
     bullets: [
-      "Secures against prompt injection",
-      "Implements OWASP LLM Top 10",
-      "MLOps monitoring with MLflow"
+      "Automated GitHub Actions CI/CD",
+      "Trivy Container Security Scanning",
+      "MLflow & PostgreSQL Infrastructure"
     ],
     github: "#",
     demo: "#"
