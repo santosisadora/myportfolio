@@ -6,6 +6,7 @@ const projects = [
   {
     title: "Production RAG Document Assistant",
     icon: <Database className="w-8 h-8 text-primary" />,
+    video: "/vuln-rag-agent-demo.mkv",
     description: "An enterprise-grade Retrieval-Augmented Generation system for querying internal documentation with high accuracy and low latency.",
     bullets: [
       "Containerized Deployment",
@@ -66,9 +67,22 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="glass glass-hover rounded-xl p-8 flex flex-col h-full group"
             >
-              <div className="mb-6 p-4 bg-primary/10 rounded-lg inline-block w-fit group-hover:scale-110 transition-transform duration-300">
-                {project.icon}
-              </div>
+              {project.video ? (
+                <div className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20">
+                  <video 
+                    src={project.video} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ) : (
+                <div className="mb-6 p-4 bg-primary/10 rounded-lg inline-block w-fit group-hover:scale-110 transition-transform duration-300">
+                  {project.icon}
+                </div>
+              )}
               <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
               <p className="text-gray-400 mb-6 flex-grow">{project.description}</p>
               
