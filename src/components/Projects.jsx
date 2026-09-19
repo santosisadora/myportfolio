@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Shield, BarChart3, Database, Code, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Shield, BarChart3, Database, Code, ExternalLink, X } from 'lucide-react';
 
 const projects = [
   {
@@ -44,6 +44,8 @@ const projects = [
 ];
 
 const Projects = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <section id="projects" className="py-24 px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
@@ -69,12 +71,18 @@ const Projects = () => {
               className="glass glass-hover rounded-xl p-8 flex flex-col h-full group"
             >
               {project.image ? (
-                <div className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20">
+                <div 
+                  className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20 cursor-pointer relative"
+                  onClick={() => setSelectedImage(project.image)}
+                >
                   <img 
                     src={project.image} 
                     alt={`${project.title} preview`}
                     className="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                   />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full border border-white/20">Click to enlarge</span>
+                  </div>
                 </div>
               ) : project.video ? (
                 <div className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20">
@@ -118,6 +126,39 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-white hover:text-primary transition-colors p-2"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              <img 
+                src={selectedImage} 
+                alt="Enlarged project preview" 
+                className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl border border-gray-700/50"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
