@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Production RAG Document Assistant",
     icon: <Database className="w-8 h-8 text-primary" />,
-    video: "/vuln-rag-agent-demo.mkv",
+    image: "/vuln-rag-demo-preview.png",
     description: "An enterprise-grade Retrieval-Augmented Generation system for querying internal documentation with high accuracy and low latency.",
     bullets: [
       "Containerized Deployment",
@@ -14,7 +14,7 @@ const projects = [
       "LangChain Orchestration"
     ],
     github: "https://github.com/santosisadora/vuln-rag-agent",
-    demo: "#"
+    demo: "/vuln-rag-agent-demo.mp4"
   },
   {
     title: "LLM Security Guardrail API",
@@ -67,7 +67,15 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="glass glass-hover rounded-xl p-8 flex flex-col h-full group"
             >
-              {project.video ? (
+              {project.image ? (
+                <div className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20">
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} preview`}
+                    className="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              ) : project.video ? (
                 <div className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20">
                   <video 
                     src={project.video} 
