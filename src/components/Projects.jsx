@@ -14,7 +14,7 @@ const projects = [
       "LangChain Orchestration"
     ],
     github: "https://github.com/santosisadora/vuln-rag-agent",
-    demo: "/vuln-rag-agent-demo.mp4"
+    demo: "/vuln-rag-agent-edited-final-demo.mp4"
   },
   {
     title: "Secure MLOps Pipeline",
@@ -27,7 +27,7 @@ const projects = [
       "MLflow & PostgreSQL Infrastructure"
     ],
     github: "https://github.com/santosisadora/secure-mlops-pipeline",
-    demo: "#"
+    demo: "/secure-mlops-pipeline-edited-final-demo.mp4"
   },
   {
     title: "Autonomous Data Analysis Agent",
