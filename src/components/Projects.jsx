@@ -31,13 +31,13 @@ const projects = [
     demo: "/secure-mlops-pipeline-edited-final-demo.mp4"
   },
   {
-    title: "Autonomous Data Analysis Agent",
+    title: "Self-Healing Agentic ETL",
     icon: <BarChart3 className="w-8 h-8 text-primary" />,
-    description: "An intelligent agent capable of understanding complex datasets, generating queries, and producing visual insights autonomously.",
+    description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors on the fly.",
     bullets: [
-      "Natural language interface for datasets",
-      "Dynamic SQL & Python execution",
-      "LangGraph decision-making"
+      "Dynamic unstructured-to-JSON extraction",
+      "Self-healing Pydantic validation loops",
+      "LangGraph state orchestration"
     ],
     github: "#",
     demo: "#"
