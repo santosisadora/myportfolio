@@ -10,8 +10,9 @@ const projects = [
     description: "An enterprise-grade Retrieval-Augmented Generation system for querying internal documentation with high accuracy and low latency.",
     bullets: [
       "Containerized Deployment",
-      "ChromaDB Vector Store",
-      "LangChain Orchestration"
+      "PostgreSQL for vector db and checkpoint",
+      "LangChain Orchestration",
+      "Langsmith for observability tool"
     ],
     github: "https://github.com/santosisadora/vuln-rag-agent",
     demo: "/vuln-rag-agent-edited-final-demo.mp4"
