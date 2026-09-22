@@ -55,7 +55,7 @@ const Header = () => {
           <a href="#contact" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
             Contact
           </a>
-          <a href="/resume.pdf" download="Isadora_Santos_Resume.pdf" className="text-sm font-medium text-primary hover:text-white transition-colors border border-primary/50 px-4 py-1.5 rounded-full hover:bg-primary/10 ml-2">
+          <a href="/Isadora_Santos-AI_MLops_Engineer.pdf" download="Isadora_Santos-AI_MLops_Engineer.pdf" className="text-sm font-medium text-primary hover:text-white transition-colors border border-primary/50 px-4 py-1.5 rounded-full hover:bg-primary/10 ml-2">
             Resume
           </a>
         </nav>
