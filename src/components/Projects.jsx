@@ -33,13 +33,14 @@ const projects = [
   {
     title: "Self-Healing Agentic ETL",
     icon: <BarChart3 className="w-8 h-8 text-primary" />,
+    image: "/self-healing-agentic-etl-preview-image.png",
     description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors on the fly.",
     bullets: [
       "Dynamic unstructured-to-JSON extraction",
       "Self-healing Pydantic validation loops",
       "LangGraph state orchestration"
     ],
-    github: "#",
+    github: "https://github.com/santosisadora/agentic-etl-pipeline/tree/main",
     demo: "#"
   }
 ];
