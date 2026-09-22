@@ -39,7 +39,7 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-semibold tracking-wide mb-6 shadow-[0_0_15px_rgba(0,240,255,0.2)] mt-4"
         >
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-          AI Software & MLOps Engineer
+          AI & MLOps Engineer
         </motion.div>
 
         <motion.p
