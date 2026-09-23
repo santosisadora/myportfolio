@@ -15,7 +15,7 @@ const projects = [
       "Langsmith for observability tool"
     ],
     github: "https://github.com/santosisadora/vuln-rag-agent",
-    demo: "/vuln-rag-agent-edited-final-demo.mp4"
+    demo: "/vuln-rag-agent-final-DEMO.mp4"
   },
   {
     title: "Secure MLOps Pipeline",
