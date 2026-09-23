@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, ArrowRight, Mail } from 'lucide-react';
+import { FileText, ArrowRight, Mail } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -69,7 +69,7 @@ const Hero = () => {
             href="#resume"
             className="flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/50 text-primary font-bold rounded-lg hover:bg-primary/10 transition-all hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] w-full sm:w-auto justify-center"
           >
-            <Download className="w-5 h-5" />
+            <FileText className="w-5 h-5" />
             Resume
           </a>
           <a
