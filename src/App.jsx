@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
+import ResumeSection from './components/ResumeSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import NetworkBackground from './components/NetworkBackground';
@@ -23,6 +24,7 @@ function App() {
         <Certifications />
         <Experience />
         <Education />
+        <ResumeSection />
         <Contact />
       </main>
       
