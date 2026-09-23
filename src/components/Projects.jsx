@@ -120,7 +120,7 @@ const Projects = () => {
                 </a>
                 <a href={project.demo} className="flex-1 flex items-center justify-center gap-2 py-2 px-4 bg-primary/10 border border-primary/30 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium">
                   <ExternalLink className="w-4 h-4" />
-                  Live Demo
+                  Watch demo
                 </a>
               </div>
             </motion.div>
