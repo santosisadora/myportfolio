@@ -11,7 +11,7 @@ const projects = [
     bullets: [
       "Fully containerized (Docker) and AWS deployed with ECS",
       "PostgreSQL for vector db and checkpoint",
-      "LangChain Orchestration & Langsmith observability"
+      "LangGraph Orchestration & LangSmith Observability"
     ],
     github: "https://github.com/santosisadora/vuln-rag-agent",
     demo: "/vuln-rag-agent-final-DEMO.mp4"
