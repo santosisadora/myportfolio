@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Download } from 'lucide-react';
 const Logo = () => (
   <div className="flex items-center gap-4 hover:scale-105 transition-transform cursor-pointer">
     <div className="flex flex-col items-center justify-between w-6 h-8">
@@ -55,7 +55,8 @@ const Header = () => {
           <a href="#contact" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
             Contact
           </a>
-          <a href="/Isadora_Santos-AI_MLops_Engineer.pdf" download="Isadora_Santos-AI_MLops_Engineer.pdf" className="text-sm font-medium text-primary hover:text-white transition-colors border border-primary/50 px-4 py-1.5 rounded-full hover:bg-primary/10 ml-2">
+          <a href="/Isadora_Santos-AI_MLops_Engineer.pdf" download="Isadora_Santos-AI_MLops_Engineer.pdf" className="text-sm font-medium text-primary hover:text-white transition-colors border border-primary/50 px-4 py-1.5 rounded-full hover:bg-primary/10 ml-2 flex items-center gap-1.5">
+            <Download className="w-4 h-4" />
             Resume
           </a>
         </nav>
