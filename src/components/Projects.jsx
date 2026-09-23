@@ -4,15 +4,14 @@ import { Shield, BarChart3, Database, Code, ExternalLink, X } from 'lucide-react
 
 const projects = [
   {
-    title: "Production RAG Document Assistant",
+    title: "SecOps RAG Agent",
     icon: <Database className="w-8 h-8 text-primary" />,
     image: "/vuln-rag-demo-preview.png",
-    description: "An enterprise-grade Retrieval-Augmented Generation system for querying internal documentation with high accuracy and low latency.",
+    description: "An advanced security operations agent featuring real-time vulnerability data from the NIST NVD API, secure RBAC access for internal policies and detections, and a Human-In-The-Loop (HITL) workflow for automated threat ticket creation.",
     bullets: [
-      "Containerized Deployment",
+      "Fully containerized (Docker) and AWS deployed with ECS",
       "PostgreSQL for vector db and checkpoint",
-      "LangChain Orchestration",
-      "Langsmith for observability tool"
+      "LangChain Orchestration & Langsmith observability"
     ],
     github: "https://github.com/santosisadora/vuln-rag-agent",
     demo: "/vuln-rag-agent-final-DEMO.mp4"
