@@ -5,12 +5,12 @@ import { GraduationCap, Calendar } from 'lucide-react';
 const education = [
   {
     degree: "MLOps - Machine Learning Operations",
-    institution: "Duke University",
+    institution: "Duke University - U.S",
     year: "Present"
   },
   {
     degree: "AI Software Engineering Specialist Diploma",
-    institution: "GRAN",
+    institution: "GRAN - Brazil",
     year: "Present"
   },
   {
@@ -20,15 +20,15 @@ const education = [
   },
   {
     degree: "Systems Analysis and Development Diploma",
-    institution: "UNINASSAU"
+    institution: "UNINASSAU - Brazil"
   },
   {
     degree: "Computer Programming",
-    institution: "Georgian College"
+    institution: "Georgian College - Canada"
   },
   {
     degree: "Specialization in IT Management",
-    institution: "GRAN"
+    institution: "GRAN - Brazil"
   }
 ];
 
