@@ -35,8 +35,8 @@ const Contact = () => {
     },
     {
       name: "WhatsApp",
-      value: "@isadora.sass",
-      url: "https://wa.me/14389348285",
+      value: "@isadorasantos.dev",
+      url: "#",
       icon: <MessageCircle className="w-6 h-6" />,
       color: "hover:text-[#25D366]"
     },
@@ -78,10 +78,10 @@ const Contact = () => {
           {contactLinks.map((link, index) => (
             <motion.a
               key={index}
-              href={link.url}
+              href={link.url !== "#" ? link.url : undefined}
               download={link.download || undefined}
-              target={link.download ? undefined : "_blank"}
-              rel={link.download ? undefined : "noopener noreferrer"}
+              target={link.download || link.url === "#" ? undefined : "_blank"}
+              rel={link.download || link.url === "#" ? undefined : "noopener noreferrer"}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
