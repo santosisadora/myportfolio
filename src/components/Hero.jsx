@@ -56,7 +56,7 @@ const Hero = () => {
               </p>
               
               <div className="flex gap-4 border-t border-gray-800/50 pt-4">
-                <a href="https://linkedin.com/in/isadorasst" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/isadora-santos-/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">LinkedIn</a>
                 <a href="https://github.com/santosisadora" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">GitHub</a>
                 <a href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">Email</a>
               </div>
