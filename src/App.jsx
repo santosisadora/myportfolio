@@ -22,13 +22,13 @@ function App() {
       
       <main className="pt-24">
         <Hero />
-        <About />
         <Projects />
         <Skills />
         <Certifications />
         <Experience />
         <Education />
         <ResumeSection />
+        <About />
         <Contact />
       </main>
       
