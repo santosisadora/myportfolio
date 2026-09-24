@@ -16,10 +16,11 @@ const experience = [
   },
   {
     company: "Royal Bank of Canada | Capital Markets",
-    role: "Senior Java Developer",
+    role: "Senior Engineer",
     period: "2024 - 2025",
     description: "Architected and maintained high-performance enterprise backend systems.",
     highlights: [
+      "Developed a production-grade, secure MLOps pipeline for operationalizing machine learning models",
       "Led development of scalable microservices",
       "Optimized database queries resulting in 40% performance gain"
     ],
@@ -31,6 +32,7 @@ const experience = [
     period: "2022 - 2024",
     description: "Implemented robust security protocols and monitoring systems.",
     highlights: [
+      "Developed the Enterprise SecOps Vulnerability Triage Agent using LangGraph, FastAPI, and AWS ECS",
       "Automated threat detection workflows",
       "Conducted security audits and vulnerability assessments"
     ],
