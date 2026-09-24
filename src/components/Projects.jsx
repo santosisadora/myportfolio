@@ -155,15 +155,21 @@ const Projects = () => {
                 ))}
               </ul>
 
-              <div className="flex gap-4 mt-auto">
-                <a href={project.github} className="flex-1 flex items-center justify-center gap-2 py-2 px-4 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors">
+              <div className="flex flex-wrap gap-3 mt-auto">
+                <a href={project.github} className="flex-1 flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
                   <Code className="w-4 h-4" />
                   GitHub
                 </a>
+                {project.liveApp && (
+                  <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-primary/20 border border-primary/50 text-white rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap">
+                    <Globe className="w-4 h-4" />
+                    Try Live Agent
+                  </a>
+                )}
                 {project.demo !== "#" ? (
                   <button 
                     onClick={() => setSelectedProject({ type: 'video', data: project })}
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-4 bg-primary/10 border border-primary/30 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium"
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-primary/10 border border-primary/30 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap"
                   >
                     <Play className="w-4 h-4" />
                     Watch demo
@@ -171,7 +177,7 @@ const Projects = () => {
                 ) : (
                   <button 
                     disabled
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-4 bg-gray-800/50 border border-gray-700/50 text-gray-500 rounded text-sm cursor-not-allowed font-medium"
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-gray-800/50 border border-gray-700/50 text-gray-500 rounded text-sm cursor-not-allowed font-medium whitespace-nowrap"
                   >
                     <ExternalLink className="w-4 h-4" />
                     No Demo Yet
@@ -246,7 +252,7 @@ const Projects = () => {
                   <video 
                     src={selectedProject.data.demo} 
                     controls 
-                    autoPlay 
+                    preload="metadata"
                     className="w-full h-auto max-h-[60vh] object-contain"
                   />
                 </div>
