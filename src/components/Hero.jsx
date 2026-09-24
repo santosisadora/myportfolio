@@ -36,7 +36,7 @@ const Hero = () => {
           <div className="glass-panel p-6 rounded-2xl">
             <div className="rounded-xl overflow-hidden mb-6 border border-gray-700/50 relative group aspect-[4/3] w-full">
               <img 
-                src="/profile.png" 
+                src="/profile.jpg" 
                 alt="Isadora Santos" 
                 className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
               />
