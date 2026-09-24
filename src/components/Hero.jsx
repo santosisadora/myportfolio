@@ -34,11 +34,11 @@ const Hero = () => {
           className="lg:col-span-5 w-full max-w-md mx-auto lg:ml-auto"
         >
           <div className="glass-panel p-6 rounded-2xl">
-            <div className="rounded-xl overflow-hidden mb-6 border border-gray-700/50 relative group h-64">
+            <div className="rounded-xl overflow-hidden mb-6 border border-gray-700/50 relative group aspect-[4/3] w-full">
               <img 
                 src="/profile.png" 
                 alt="Isadora Santos" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
               />
               {/* Subtle inner glow overlay */}
               <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(0,0,0,0.5)] pointer-events-none"></div>
