@@ -114,7 +114,7 @@ const Projects = () => {
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Featured Projects</h2>
           </div>
           <div className="w-full h-[1px] bg-gray-800 relative">
-            <div className="absolute top-0 left-0 w-64 h-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+            <div className="absolute top-0 left-0 w-64 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
 
@@ -126,7 +126,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-panel rounded-2xl p-6 flex flex-col h-full group transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,255,0.2)]"
+              className="glass-panel rounded-2xl p-6 flex flex-col h-full group transition-all duration-500 hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]"
             >
               {project.image ? (
                 <div 
@@ -273,7 +273,7 @@ const Projects = () => {
                       href={selectedProject.data.liveApp} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="whitespace-nowrap px-6 py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center gap-2"
+                      className="whitespace-nowrap px-6 py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_15px_rgba(20,184,166,0.4)] flex items-center gap-2"
                     >
                       <Globe className="w-5 h-5" />
                       Try Live Agent

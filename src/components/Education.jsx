@@ -47,7 +47,7 @@ const Education = () => {
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Education</h2>
           </div>
           <div className="w-full h-[1px] bg-gray-800 relative">
-            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
 
@@ -59,7 +59,7 @@ const Education = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-panel rounded-2xl p-6 flex gap-5 items-start h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)]"
+              className="glass-panel rounded-2xl p-6 flex gap-5 items-start h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]"
             >
               <div className="p-3 bg-primary/10 rounded-full flex-shrink-0 mt-1">
                 <GraduationCap className="w-6 h-6 text-primary" />

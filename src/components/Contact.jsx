@@ -67,7 +67,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="glass-panel-heavy rounded-2xl p-8 w-full shadow-[0_0_50px_rgba(0,240,255,0.1)]"
+          className="glass-panel-heavy rounded-2xl p-8 w-full shadow-[0_0_50px_rgba(20,184,166,0.1)]"
         >
           <div className="flex flex-col gap-6">
             {contactLinks.map((link, index) => (

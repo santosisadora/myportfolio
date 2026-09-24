@@ -53,7 +53,7 @@ const Skills = () => {
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Core Skills</h2>
           </div>
           <div className="w-full h-[1px] bg-gray-800 relative">
-            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
 
@@ -65,9 +65,9 @@ const Skills = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: category.delay }}
-              className={`glass-panel transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] rounded-2xl p-8 ${category.colSpan}`}
+              className={`glass-panel transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] rounded-2xl p-8 ${category.colSpan}`}
             >
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center before:content-[''] before:w-2 before:h-2 before:bg-primary before:rounded-full before:mr-3 before:shadow-[0_0_8px_rgba(0,240,255,0.8)]">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center before:content-[''] before:w-2 before:h-2 before:bg-primary before:rounded-full before:mr-3 before:shadow-[0_0_8px_rgba(20,184,166,0.8)]">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-3">

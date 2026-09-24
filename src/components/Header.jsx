@@ -33,7 +33,7 @@ const Header = () => {
           </a>
           <a 
             href="#contact" 
-            className="text-sm font-medium text-primary bg-primary/10 border border-primary/50 px-5 py-2 rounded-full hover:bg-primary hover:text-black transition-all hover:shadow-[0_0_15px_rgba(0,240,255,0.4)]"
+            className="text-sm font-medium text-primary bg-primary/10 border border-primary/50 px-5 py-2 rounded-full hover:bg-primary hover:text-black transition-all hover:shadow-[0_0_15px_rgba(20,184,166,0.4)]"
           >
             Get in Touch
           </a>

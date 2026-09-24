@@ -5,25 +5,25 @@
 
 @layer base {
   body {
-    @apply bg-[#070b14] text-gray-200 font-sans antialiased selection:bg-primary/30;
+    @apply bg-[#050a0a] text-gray-200 font-sans antialiased selection:bg-primary/30;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-[#0f1623]/60 backdrop-blur-xl border border-gray-700/30;
+    @apply bg-[#081212]/60 backdrop-blur-xl border border-gray-700/30;
   }
   
   .glass-hover {
-    @apply hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] transition-all duration-500;
+    @apply hover:border-primary/50 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] transition-all duration-500;
   }
 
   .glass-panel {
-    @apply bg-[#0b111c]/80 backdrop-blur-xl border border-primary/20 shadow-[0_0_40px_rgba(0,240,255,0.08)];
+    @apply bg-[#060f0f]/80 backdrop-blur-xl border border-primary/20 shadow-[0_0_40px_rgba(20,184,166,0.08)];
   }
 
   .glass-panel-heavy {
-    @apply bg-[#0b111c]/90 backdrop-blur-xl border border-primary/40 shadow-[0_0_50px_rgba(0,240,255,0.15)];
+    @apply bg-[#060f0f]/90 backdrop-blur-xl border border-primary/40 shadow-[0_0_50px_rgba(20,184,166,0.15)];
   }
   
   .text-glow {

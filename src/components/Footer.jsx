@@ -12,9 +12,9 @@ const LinkedinIcon = () => (
 const Logo = () => (
   <div className="flex items-center gap-4 hover:scale-105 transition-transform cursor-pointer">
     <div className="flex flex-col items-center justify-between w-6 h-8">
-      <div className="w-full h-1.5 bg-primary shadow-[0_0_8px_rgba(0,240,255,0.6)]"></div>
-      <div className="w-1.5 h-full bg-primary shadow-[0_0_8px_rgba(0,240,255,0.6)]"></div>
-      <div className="w-full h-1.5 bg-primary shadow-[0_0_8px_rgba(0,240,255,0.6)]"></div>
+      <div className="w-full h-1.5 bg-primary shadow-[0_0_8px_rgba(20,184,166,0.6)]"></div>
+      <div className="w-1.5 h-full bg-primary shadow-[0_0_8px_rgba(20,184,166,0.6)]"></div>
+      <div className="w-full h-1.5 bg-primary shadow-[0_0_8px_rgba(20,184,166,0.6)]"></div>
     </div>
     <div className="flex flex-col justify-center">
       <span className="text-lg font-bold text-white tracking-widest leading-none">ISADORA SANTOS</span>

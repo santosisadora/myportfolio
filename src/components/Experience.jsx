@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const experience = [
   {
-    company: "Continuous Learning",
+    company: "Independent AI & DevSecOps Engineer and Continuous Learning",
     role: "AI/ML Specialization",
     period: "2025 - Present",
     description: "Actively transitioning into advanced AI and MLOps roles through rigorous specialized training.",
@@ -77,13 +77,13 @@ const Experience = () => {
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Experience</h2>
           </div>
           <div className="w-full h-[1px] bg-gray-800 relative">
-            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
 
         <div className="relative pl-8 md:pl-0">
           {/* Main glowing timeline line */}
-          <div className="absolute left-[7px] md:left-[11px] top-4 bottom-4 w-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+          <div className="absolute left-[7px] md:left-[11px] top-4 bottom-4 w-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
 
           <div className="flex flex-col gap-8">
             {experience.map((item, index) => (
@@ -99,13 +99,13 @@ const Experience = () => {
                 <div
                   className={`absolute left-0 md:left-[4px] top-8 w-4 h-4 rounded-full border-2 border-background z-10 ${
                     item.active
-                      ? 'bg-primary shadow-[0_0_15px_rgba(0,240,255,1)] animate-pulse'
-                      : 'bg-primary shadow-[0_0_10px_rgba(0,240,255,0.5)]'
+                      ? 'bg-primary shadow-[0_0_15px_rgba(20,184,166,1)] animate-pulse'
+                      : 'bg-primary shadow-[0_0_10px_rgba(20,184,166,0.5)]'
                   }`}
                 ></div>
 
                 {/* Experience Card */}
-                <div className="glass-panel rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-12 transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,255,0.2)]">
+                <div className="glass-panel rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-12 transition-all duration-500 hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]">
                   
                   {/* Left Column: Role & Company */}
                   <div className="md:w-1/3 flex flex-col">

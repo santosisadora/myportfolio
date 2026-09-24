@@ -158,7 +158,7 @@ const Certifications = () => {
           <p className="text-gray-400 max-w-2xl mx-auto text-base">
             Verified credentials in Autonomous AI Agents, LangGraph Orchestration, LLM Observability, and AWS Cloud Native Infrastructure.
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6 shadow-[0_0_12px_rgba(0,240,255,0.6)]"></div>
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6 shadow-[0_0_12px_rgba(20,184,166,0.6)]"></div>
         </motion.div>
 
         {/* Category Filters */}
@@ -181,7 +181,7 @@ const Certifications = () => {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
                   isActive
-                    ? "bg-primary text-black font-semibold shadow-[0_0_15px_rgba(0,240,255,0.4)]"
+                    ? "bg-primary text-black font-semibold shadow-[0_0_15px_rgba(20,184,166,0.4)]"
                     : "bg-gray-900/60 text-gray-300 border border-gray-800 hover:border-gray-700 hover:text-white"
                 }`}
               >
@@ -321,7 +321,7 @@ const Certifications = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="p-6 rounded-xl border border-gray-800 bg-[#0f1623]/60 backdrop-blur-sm"
+          className="p-6 rounded-xl border border-gray-800 bg-[#081212]/60 backdrop-blur-sm"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
             <div className="flex items-center gap-2">
@@ -339,7 +339,7 @@ const Certifications = () => {
             {additionalCredentials.map((item, idx) => (
               <div 
                 key={idx}
-                className="p-4 rounded-lg bg-[#0b111c]/80 border border-gray-800/70 flex items-start gap-3 hover:border-gray-700 transition-colors"
+                className="p-4 rounded-lg bg-[#060f0f]/80 border border-gray-800/70 flex items-start gap-3 hover:border-gray-700 transition-colors"
               >
                 <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                 <div>
@@ -439,7 +439,7 @@ const Certifications = () => {
                     href={encodeURI(selectedCert.pdf)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 md:flex-none px-4 py-2.5 rounded-lg bg-primary text-black font-semibold text-xs md:text-sm hover:bg-white transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,240,255,0.3)]"
+                    className="flex-1 md:flex-none px-4 py-2.5 rounded-lg bg-primary text-black font-semibold text-xs md:text-sm hover:bg-white transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(20,184,166,0.3)]"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Open Original PDF

@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#070b14] text-gray-200 font-sans selection:bg-primary/30 relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#050a0a] text-gray-200 font-sans selection:bg-primary/30 relative overflow-x-hidden">
       {/* Ambient background glows */}
       <div className="fixed top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10"></div>
       <div className="fixed bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10"></div>
