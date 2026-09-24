@@ -45,7 +45,7 @@ const About = () => {
               I'm deeply passionate about technology and relentlessly curious. I thrive on discovering new, elegant ways to solve complex problems and am always on the hunt for the next exciting thing to learn.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              When I'm not architecting secure AI pipelines or writing code, you can find me spiking a volleyball, exploring new travel destinations, strategizing over a chessboard with my husband, or just hanging out with my cats. 
+              When I'm not architecting secure AI pipelines or writing code, you can find me spiking a volleyball, exploring new travel destinations, playing chess with my husband, or just hanging out with my cats. 
             </p>
           </motion.div>
 
