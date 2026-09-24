@@ -15,6 +15,9 @@ const Header = () => {
 
         {/* Center: Navigation (Hidden on small screens) */}
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 z-10">
+          <a href="#about" className="text-sm font-medium text-gray-400 hover:text-primary transition-colors">
+            About
+          </a>
           <a href="#projects" className="text-sm font-medium text-gray-400 hover:text-primary transition-colors">
             Projects
           </a>
