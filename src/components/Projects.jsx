@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, BarChart3, Database, Code, ExternalLink, X, Play, Monitor, Server, Cpu, Database as DbIcon, Lock, Globe } from 'lucide-react';
+import { Shield, BarChart3, Database, Code, ExternalLink, X, Play, Monitor, Server, Cpu, Database as DbIcon, Lock, Globe, Info } from 'lucide-react';
 
 const projects = [
   {
@@ -156,31 +156,42 @@ const Projects = () => {
               </ul>
 
               <div className="flex flex-wrap gap-3 mt-auto">
-                <a href={project.github} className="flex-1 flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
                   <Code className="w-4 h-4" />
                   GitHub
                 </a>
                 {project.liveApp && (
                   <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-primary/20 border border-primary/50 text-white rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap">
                     <Globe className="w-4 h-4" />
-                    Try Live Agent
+                    Try Agent
                   </a>
                 )}
                 {project.demo !== "#" ? (
-                  <button 
-                    onClick={() => setSelectedProject({ type: 'video', data: project })}
+                  <a 
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-primary/10 border border-primary/30 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap"
                   >
                     <Play className="w-4 h-4" />
                     Watch demo
-                  </button>
+                  </a>
                 ) : (
                   <button 
                     disabled
                     className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-gray-800/50 border border-gray-700/50 text-gray-500 rounded text-sm cursor-not-allowed font-medium whitespace-nowrap"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    No Demo Yet
+                    No Demo
+                  </button>
+                )}
+                {project.fullDescription && (
+                  <button 
+                    onClick={() => setSelectedProject({ type: 'details', data: project })}
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 border border-gray-600 text-gray-300 rounded text-sm hover:bg-gray-700 hover:text-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    <Info className="w-4 h-4" />
+                    View Details
                   </button>
                 )}
               </div>
@@ -221,7 +232,7 @@ const Projects = () => {
           </motion.div>
         )}
 
-        {selectedProject && selectedProject.type === 'video' && (
+        {selectedProject && selectedProject.type === 'details' && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -248,14 +259,6 @@ const Projects = () => {
               </div>
               
               <div className="p-4 sm:p-6">
-                <div className="rounded-xl overflow-hidden shadow-lg border border-gray-800 bg-black">
-                  <video 
-                    src={selectedProject.data.demo} 
-                    controls 
-                    preload="metadata"
-                    className="w-full h-auto max-h-[60vh] object-contain"
-                  />
-                </div>
 
                 {selectedProject.data.liveApp && (
                   <div className="mt-8 bg-primary/10 border border-primary/30 rounded-xl p-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
