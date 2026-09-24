@@ -34,17 +34,21 @@ const education = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 px-6 relative z-10 bg-gray-950/30">
+    <section id="education" className="py-24 px-6 relative z-10 ">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-12"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Education</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+          <div className="flex items-center gap-4 mb-2">
+            <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Education</h2>
+          </div>
+          <div className="w-full h-[1px] bg-gray-800 relative">
+            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -55,7 +59,7 @@ const Education = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass glass-hover rounded-xl p-6 flex gap-5 items-start h-full"
+              className="glass-panel rounded-2xl p-6 flex gap-5 items-start h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)]"
             >
               <div className="p-3 bg-primary/10 rounded-full flex-shrink-0 mt-1">
                 <GraduationCap className="w-6 h-6 text-primary" />

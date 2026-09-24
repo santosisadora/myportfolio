@@ -40,17 +40,21 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6 relative z-10 bg-gray-950/30">
+    <section id="skills" className="py-24 px-6 relative z-10 ">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-12"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Core Skills</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+          <div className="flex items-center gap-4 mb-2">
+            <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Core Skills</h2>
+          </div>
+          <div className="w-full h-[1px] bg-gray-800 relative">
+            <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -61,7 +65,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: category.delay }}
-              className={`glass glass-hover rounded-2xl p-8 ${category.colSpan}`}
+              className={`glass-panel transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] rounded-2xl p-8 ${category.colSpan}`}
             >
               <h3 className="text-xl font-bold text-white mb-6 flex items-center before:content-[''] before:w-2 before:h-2 before:bg-primary before:rounded-full before:mr-3 before:shadow-[0_0_8px_rgba(0,240,255,0.8)]">
                 {category.title}

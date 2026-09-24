@@ -1,63 +1,44 @@
-import React, { useState, useEffect } from 'react';
-const Logo = () => (
-  <div className="flex items-center gap-4 hover:scale-105 transition-transform cursor-pointer">
-    <div className="flex flex-col items-center justify-between w-6 h-8">
-      <div className="w-full h-1.5 bg-primary shadow-[0_0_8px_rgba(0,240,255,0.6)]"></div>
-      <div className="w-1.5 h-full bg-primary shadow-[0_0_8px_rgba(0,240,255,0.6)]"></div>
-      <div className="w-full h-1.5 bg-primary shadow-[0_0_8px_rgba(0,240,255,0.6)]"></div>
-    </div>
-    <div className="flex flex-col justify-center">
-      <span className="text-lg font-bold text-white tracking-widest leading-none">ISADORA SANTOS</span>
-      <span className="text-[0.6rem] text-primary tracking-widest uppercase mt-1 font-semibold">AI & MLOps Engineer</span>
-    </div>
-  </div>
-);
+import React from 'react';
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-md border-b border-gray-800' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#" className="flex-shrink-0">
-          <Logo />
-        </a>
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
+      <div className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-[0_0_30px_rgba(0,0,0,0.5)]">
         
-        <nav className="hidden md:flex gap-6">
-          <a href="#projects" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
+        {/* Left: Logo/Name */}
+        <a href="#" className="text-gray-300 font-medium tracking-widest text-sm hover:text-white transition-colors uppercase">
+          Isadora Santos
+        </a>
+
+        {/* Center: Navigation (Hidden on small screens) */}
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#projects" className="text-sm font-medium text-gray-400 hover:text-primary transition-colors">
             Projects
           </a>
-          <a href="#skills" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
-            Skills
-          </a>
-          <a href="#certifications" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
-            Certifications
-          </a>
-          <a href="#experience" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
+          <a href="#experience" className="text-sm font-medium text-gray-400 hover:text-primary transition-colors">
             Experience
           </a>
-          <a href="#education" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
+          <a href="#education" className="text-sm font-medium text-gray-400 hover:text-primary transition-colors">
             Education
           </a>
-          <a href="#contact" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
+          <a href="#contact" className="text-sm font-medium text-gray-400 hover:text-primary transition-colors">
             Contact
           </a>
-          <a href="#resume" className="text-sm font-medium text-primary hover:text-white transition-colors border border-primary/50 px-4 py-1.5 rounded-full hover:bg-primary/10 ml-2">
+        </nav>
+
+        {/* Right: CTA Button */}
+        <div className="flex items-center gap-4">
+          <a href="#resume" className="hidden md:block text-sm font-medium text-gray-400 hover:text-white transition-colors">
             Resume
           </a>
-        </nav>
+          <a 
+            href="#contact" 
+            className="text-sm font-medium text-primary bg-primary/10 border border-primary/50 px-5 py-2 rounded-full hover:bg-primary hover:text-black transition-all hover:shadow-[0_0_15px_rgba(0,240,255,0.4)]"
+          >
+            Get in Touch
+          </a>
+        </div>
+
       </div>
     </header>
   );

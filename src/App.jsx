@@ -9,15 +9,17 @@ import Education from './components/Education';
 import ResumeSection from './components/ResumeSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import NetworkBackground from './components/NetworkBackground';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-gray-200 font-sans selection:bg-primary/30 relative overflow-x-hidden">
-      <NetworkBackground />
+    <div className="min-h-screen bg-[#070b14] text-gray-200 font-sans selection:bg-primary/30 relative overflow-x-hidden">
+      {/* Ambient background glows */}
+      <div className="fixed top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10"></div>
+      <div className="fixed bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10"></div>
+      
       <Header />
       
-      <main>
+      <main className="pt-24">
         <Hero />
         <Projects />
         <Skills />

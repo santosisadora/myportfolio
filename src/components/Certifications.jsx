@@ -321,7 +321,7 @@ const Certifications = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="p-6 rounded-xl border border-gray-800 bg-gray-900/30 backdrop-blur-sm"
+          className="p-6 rounded-xl border border-gray-800 bg-[#0f1623]/60 backdrop-blur-sm"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
             <div className="flex items-center gap-2">
@@ -339,7 +339,7 @@ const Certifications = () => {
             {additionalCredentials.map((item, idx) => (
               <div 
                 key={idx}
-                className="p-4 rounded-lg bg-gray-950/50 border border-gray-800/70 flex items-start gap-3 hover:border-gray-700 transition-colors"
+                className="p-4 rounded-lg bg-[#0b111c]/80 border border-gray-800/70 flex items-start gap-3 hover:border-gray-700 transition-colors"
               >
                 <CheckCircle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                 <div>

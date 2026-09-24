@@ -13,91 +13,84 @@ const LinkedinIcon = () => (
 const Contact = () => {
   const contactLinks = [
     {
-      name: "LinkedIn",
-      value: "isadora-santos-",
-      url: "https://www.linkedin.com/in/isadora-santos-/",
-      icon: <LinkedinIcon />,
-      color: "hover:text-[#0a66c2]"
-    },
-    {
       name: "GitHub",
-      value: "santosisadora",
+      value: "@santosisadora",
       url: "https://github.com/santosisadora",
       icon: <GithubIcon />,
-      color: "hover:text-gray-300"
+    },
+    {
+      name: "LinkedIn",
+      value: "/in/isadora-santos-",
+      url: "https://www.linkedin.com/in/isadora-santos-/",
+      icon: <LinkedinIcon />,
     },
     {
       name: "Email",
       value: "isadorasantos.dev@gmail.com",
       url: "mailto:isadorasantos.dev@gmail.com",
-      icon: <Mail className="w-6 h-6" />,
-      color: "hover:text-red-400"
+      icon: <Mail className="w-5 h-5" />,
     },
     {
       name: "WhatsApp",
       value: "@isadorasantos.dev",
       url: "#",
-      icon: <MessageCircle className="w-6 h-6" />,
-      color: "hover:text-[#25D366]"
-    },
-    {
-      name: "Phone",
-      value: "+1 438 934 8285",
-      url: "tel:+14389348285",
-      icon: <Phone className="w-6 h-6" />,
-      color: "hover:text-primary"
+      icon: <MessageCircle className="w-5 h-5" />,
     },
     {
       name: "Resume",
       value: "Download PDF",
       url: "/Isadora_Santos-AI_MLops_Engineer.pdf",
-      icon: <Download className="w-6 h-6" />,
-      color: "hover:text-primary",
+      icon: <Download className="w-5 h-5" />,
       download: "Isadora_Santos-AI_MLops_Engineer.pdf"
     }
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 relative z-10 bg-gray-950/30">
-      <div className="max-w-5xl mx-auto">
+    <section id="contact" className="py-24 px-6 relative z-10">
+      <div className="max-w-xl mx-auto flex flex-col items-center">
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-12 text-center"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
-          <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-            I'm currently open for new opportunities. Whether you have a question or just want to say hi, feel free to connect!
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Let's Work Together</h2>
+          <p className="text-gray-400">
+            Have a project idea? Feel free to reach out and let's create something amazing.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {contactLinks.map((link, index) => (
-            <motion.a
-              key={index}
-              href={link.url !== "#" ? link.url : undefined}
-              download={link.download || undefined}
-              target={link.download || link.url === "#" ? undefined : "_blank"}
-              rel={link.download || link.url === "#" ? undefined : "noopener noreferrer"}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className={`glass glass-hover rounded-xl p-6 flex flex-col items-center justify-center gap-4 text-center group cursor-pointer transition-all duration-300 ${link.color}`}
-            >
-              <div className="p-4 bg-gray-800/50 rounded-full group-hover:bg-gray-800 transition-colors">
-                {link.icon}
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white mb-1">{link.name}</h3>
-                <p className="text-sm text-gray-400 group-hover:text-white transition-colors">{link.value}</p>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="glass-panel-heavy rounded-2xl p-8 w-full shadow-[0_0_50px_rgba(0,240,255,0.1)]"
+        >
+          <div className="flex flex-col gap-6">
+            {contactLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.url !== "#" ? link.url : undefined}
+                download={link.download || undefined}
+                target={link.download || link.url === "#" ? undefined : "_blank"}
+                rel={link.download || link.url === "#" ? undefined : "noopener noreferrer"}
+                className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+                  {link.icon}
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-gray-200 font-bold group-hover:text-primary transition-colors">{link.name}</span>
+                  <span className="text-gray-500 text-sm">{link.value}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

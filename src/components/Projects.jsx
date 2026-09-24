@@ -108,10 +108,14 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          className="mb-12"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+          <div className="flex items-center gap-4 mb-2">
+            <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Featured Projects</h2>
+          </div>
+          <div className="w-full h-[1px] bg-gray-800 relative">
+            <div className="absolute top-0 left-0 w-64 h-[2px] bg-primary shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,7 +126,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass glass-hover rounded-xl p-8 flex flex-col h-full group"
+              className="glass-panel rounded-2xl p-6 flex flex-col h-full group transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,255,0.2)]"
             >
               {project.image ? (
                 <div 
@@ -146,14 +150,13 @@ const Projects = () => {
               <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
               <p className="text-gray-400 mb-6 flex-grow">{project.description}</p>
               
-              <ul className="mb-8 space-y-2">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.bullets.map((bullet, i) => (
-                  <li key={i} className="flex items-start text-sm text-gray-300">
-                    <span className="text-primary mr-2 mt-1">▹</span>
-                    {bullet}
-                  </li>
+                  <span key={i} className="px-3 py-1 bg-gray-800/50 border border-gray-700 rounded-full text-xs text-gray-300">
+                    {bullet.replace('LangGraph Orchestration & LangSmith Observability', 'LangGraph').replace('Fully containerized (Docker) and AWS deployed with ECS', 'Docker & AWS').replace('PostgreSQL for vector db and checkpoint', 'PostgreSQL').replace('Automated GitHub Actions CI/CD', 'GitHub Actions').replace('Trivy Container Security Scanning', 'Trivy').replace('MLflow & PostgreSQL Infrastructure', 'MLflow').replace('Dynamic unstructured-to-JSON extraction', 'JSON Extractor').replace('Self-healing Pydantic validation loops', 'Pydantic').replace('LangGraph state orchestration', 'LangGraph')}
+                  </span>
                 ))}
-              </ul>
+              </div>
 
               <div className="flex flex-wrap gap-3 mt-auto">
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
