@@ -39,9 +39,9 @@ const Contact = () => {
     {
       name: "Resume",
       value: "Download PDF",
-      url: "/Isadora_Santos-AI_MLops_Engineer.pdf",
+      url: "/Isadora_Santos_Resume.pdf",
       icon: <Download className="w-5 h-5" />,
-      download: "Isadora_Santos-AI_MLops_Engineer.pdf"
+      download: "Isadora_Santos_Resume.pdf"
     }
   ];
 

@@ -25,7 +25,7 @@ const ResumeSection = () => {
           className="glass glass-hover rounded-xl p-10 flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <a
-            href="/Isadora_Santos-AI_MLops_Engineer.pdf"
+            href="/Isadora_Santos_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/50 text-primary font-bold rounded-lg hover:bg-primary/10 transition-all hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] w-full sm:w-auto justify-center"
@@ -34,8 +34,8 @@ const ResumeSection = () => {
             View Resume
           </a>
           <a
-            href="/Isadora_Santos-AI_MLops_Engineer.pdf"
-            download="Isadora_Santos-AI_MLops_Engineer.pdf"
+            href="/Isadora_Santos_Resume.pdf"
+            download="Isadora_Santos_Resume.pdf"
             className="flex items-center gap-2 px-8 py-4 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-all hover:shadow-[0_0_15px_rgba(20,184,166,0.4)] w-full sm:w-auto justify-center"
           >
             <Download className="w-5 h-5" />
