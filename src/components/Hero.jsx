@@ -14,7 +14,7 @@ const Hero = () => {
           className="lg:col-span-7 flex flex-col items-start text-left"
         >
           <p className="text-gray-400 uppercase tracking-widest text-sm mb-4 font-medium">
-            AI & MLOps Engineer
+            AI Systems & SecOps Engineer
           </p>
           
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white leading-[1.1] tracking-tight mb-6">

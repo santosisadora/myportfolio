@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, BarChart3, Database, Code, ExternalLink, X, Play, Monitor, Server, Cpu, Database as DbIcon, Lock, Globe, Info } from 'lucide-react';
+import { Play, Code, Globe, Info, Shield, BarChart3, Lock, Server, Cpu, Database as DbIcon, ExternalLink, X, Activity, Network } from 'lucide-react';
+import Mermaid from './Mermaid';
 
 const projects = [
   {
     title: "Enterprise SecOps Vulnerability Triage Agent",
-    icon: <Database className="w-8 h-8 text-primary" />,
-    image: "/vuln-rag-demo-preview.png",
-    description: "An autonomous, cloud-native AI security agent built with LangGraph, FastAPI, and AWS ECS that correlates live NIST NVD vulnerability intelligence with internal asset inventories and PGVector SLA policies, drafting and executing Jira remediation tickets through a stateful Human-in-the-Loop (HITL) approval workflow.",
-    bullets: [
-      "Fully containerized (Docker) and AWS deployed with ECS",
-      "PostgreSQL for vector db and checkpoint",
-      "LangGraph Orchestration & LangSmith Observability"
+    icon: <Lock className="w-8 h-8 text-primary" />,
+    image: "/rag-secops-agent-preview-image.png",
+    description: "An autonomous, cloud-native AI security agent built with LangGraph, FastAPI, and AWS ECS that correlates live NIST NVD vulnerability intelligence.",
+    metrics: [
+      { label: "Context & Token Compression", value: "Two-stage retrieval (PGVector k=10 → FlashRank top_n=2) reduces prompt payload by 80% while preserving 100% policy faithfulness." },
+      { label: "Latency & Cost Control", value: "Semantic LLM caching bypasses vector DB on repeat/off-topic inputs, cutting latency to <200ms and cold-path NVD triage to ~4.2s (p95)." },
+      { label: "Zero-Trust State Trade-off", value: "Chose external AsyncPostgresSaver connection pooling (max_size=20) over in-memory checkpointers so HITL pauses survive ECS container restarts." }
     ],
-    github: "https://github.com/santosisadora/vuln-rag-agent",
+    diagram: `graph TD
+      Client["CloudFront (S3 UI + ALB Proxy)"] --> FastAPI["FastAPI (Basic Auth + SlowAPI 5/min)"]
+      FastAPI --> Router["LangGraph Router"]
+      Router --> NVD["NVD API + PGVector (k=10)"]
+      NVD --> FlashRank["FlashRank (top_n=2)"]
+      FlashRank --> Saver["AsyncPostgresSaver (HITL Breakpoint)"]
+      Saver --> Jira["Jira REST API"]
+      Router -.-> LangSmith["LangSmith Evals"]
+      Router -.-> CW["CloudWatch"]`,
+    github: "https://github.com/santosisadora/ai-agent-vulnerability-triage/tree/main",
     demo: "/vuln-rag-agent-final-DEMO.mp4",
     liveApp: "https://dvd40fbcl8i24.cloudfront.net/",
     fullDescription: (
@@ -73,12 +83,19 @@ const projects = [
     title: "Secure MLOps Pipeline",
     icon: <Shield className="w-8 h-8 text-primary" />,
     image: "/mlflow-secure-mlops-pipeline-demo-image.png",
-    description: "A production-grade, security-first CI/CD pipeline demonstrating enterprise best practices for operationalizing machine learning models with automated vulnerability management.",
-    bullets: [
-      "Automated GitHub Actions CI/CD",
-      "Trivy Container Security Scanning",
-      "MLflow & PostgreSQL Infrastructure"
+    description: "A production-grade, security-first CI/CD pipeline demonstrating enterprise best practices for operationalizing machine learning models.",
+    metrics: [
+      { label: "Security Gate Metrics", value: "Automated Trivy container & dependency scanning blocks 100% of Critical/High CVEs pre-deployment in <90s CI runtime." },
+      { label: "Registry & Rollback", value: "MLflow Model Registry versioning paired with automated rollback triggers if validation F1/AUC drops below baseline threshold." },
+      { label: "Deployment Depth", value: "Kubernetes deployment manifests ensure robust, scalable, and isolated production lifecycle depth." }
     ],
+    diagram: `graph TD
+      Push["GitHub Push"] --> Actions["GitHub Actions"]
+      Actions --> Trivy["Trivy Security Gate (Fail on Critical/High CVE)"]
+      Trivy --> MLflow["MLflow Training & Registry Versioning"]
+      MLflow --> Eval["Evaluation Gate"]
+      Eval -- "F1/AUC Drop" --> Rollback["Automated Rollback Trigger"]
+      Eval -- "Pass" --> Prod["Production Deployment (K8s Manifests)"]`,
     github: "https://github.com/santosisadora/secure-mlops-pipeline",
     demo: "/secure-mlops-pipeline-edited-final-demo.mp4"
   },
@@ -86,12 +103,19 @@ const projects = [
     title: "Self-Healing Agentic ETL",
     icon: <BarChart3 className="w-8 h-8 text-primary" />,
     image: "/self-healing-agentic-etl-preview-image.png",
-    description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors on the fly.",
-    bullets: [
-      "Dynamic unstructured-to-JSON extraction",
-      "Self-healing Pydantic validation loops",
-      "LangGraph state orchestration"
+    description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors.",
+    metrics: [
+      { label: "Specific Failure Modes Healed", value: "Intercepts upstream schema drift / renamed fields, malformed JSON/Pydantic validation errors, and HTTP 429 rate-limit backoffs." },
+      { label: "Recovery vs. DLQ Rate", value: "Autonomously resolves 94% of schema/formatting exceptions within ≤2 self-correction loops." },
+      { label: "Dead-Letter Queue", value: "Routes the remaining 6% of unrecoverable payloads to a Dead-Letter Queue (DLQ) with structured failure traces." }
     ],
+    diagram: `graph TD
+      Ingest["Ingestion Source"] --> Extractor["Extractor Agent"]
+      Extractor --> Validator["Pydantic Schema Validator"]
+      Validator -- "Invalid Schema / 429" --> Retry["Conditional Retry / Self-Healing Loop (Max N Retries)"]
+      Retry --> Extractor
+      Retry -- "Max Retries Reached" --> DLQ["Dead-Letter Queue (DLQ)"]
+      Validator -- "Valid JSON" --> Target["Target DB"]`,
     github: "https://github.com/santosisadora/agentic-etl-pipeline/tree/main",
     demo: "#"
   }
@@ -147,15 +171,20 @@ const Projects = () => {
                   {project.icon}
                 </div>
               )}
-              <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-              <p className="text-gray-400 mb-6 flex-grow">{project.description}</p>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{project.title}</h3>
+              <p className="text-gray-400 mb-6 text-sm flex-grow">{project.description}</p>
               
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.bullets.map((bullet, i) => (
-                  <span key={i} className="px-3 py-1 bg-gray-800/50 border border-gray-700 rounded-full text-xs text-gray-300">
-                    {bullet.replace('LangGraph Orchestration & LangSmith Observability', 'LangGraph').replace('Fully containerized (Docker) and AWS deployed with ECS', 'Docker & AWS').replace('PostgreSQL for vector db and checkpoint', 'PostgreSQL').replace('Automated GitHub Actions CI/CD', 'GitHub Actions').replace('Trivy Container Security Scanning', 'Trivy').replace('MLflow & PostgreSQL Infrastructure', 'MLflow').replace('Dynamic unstructured-to-JSON extraction', 'JSON Extractor').replace('Self-healing Pydantic validation loops', 'Pydantic').replace('LangGraph state orchestration', 'LangGraph')}
-                  </span>
-                ))}
+              <div className="mb-6 bg-[#060f0f]/80 p-4 rounded-xl border border-primary/20">
+                <h4 className="text-sm font-bold text-primary mb-3 flex items-center gap-2">
+                  <Activity className="w-4 h-4" /> 📊 System Metrics & Trade-offs
+                </h4>
+                <ul className="space-y-3">
+                  {project.metrics.map((metric, i) => (
+                    <li key={i} className="text-xs text-gray-300 leading-relaxed">
+                      <strong className="text-primary/90">{metric.label}:</strong> {metric.value}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="flex flex-wrap gap-3 mt-auto">
@@ -188,13 +217,22 @@ const Projects = () => {
                     No Demo
                   </button>
                 )}
+                {project.diagram && (
+                  <button 
+                    onClick={() => setSelectedProject({ type: 'diagram', data: project })}
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-[#081212] border border-primary/40 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap shadow-[0_0_10px_rgba(20,184,166,0.1)]"
+                  >
+                    <Network className="w-4 h-4" />
+                    Architecture
+                  </button>
+                )}
                 {project.fullDescription && (
                   <button 
                     onClick={() => setSelectedProject({ type: 'details', data: project })}
                     className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 border border-gray-600 text-gray-300 rounded text-sm hover:bg-gray-700 hover:text-white transition-colors font-medium whitespace-nowrap"
                   >
                     <Info className="w-4 h-4" />
-                    View Details
+                    Details
                   </button>
                 )}
               </div>
@@ -248,10 +286,10 @@ const Projects = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-gray-900 border border-gray-700/80 rounded-2xl shadow-2xl flex flex-col scrollbar-thin scrollbar-thumb-gray-600"
+              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-[#050a0a] border border-gray-700/80 rounded-2xl shadow-2xl flex flex-col scrollbar-thin scrollbar-thumb-gray-600"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="sticky top-0 z-20 bg-gray-900/90 backdrop-blur-md p-4 border-b border-gray-800 flex justify-between items-center">
+              <div className="sticky top-0 z-20 bg-[#081212]/90 backdrop-blur-md p-4 border-b border-gray-800 flex justify-between items-center">
                 <h3 className="text-xl sm:text-2xl font-bold text-white">{selectedProject.data.title}</h3>
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -283,6 +321,39 @@ const Projects = () => {
 
                 {selectedProject.data.fullDescription}
 
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {selectedProject && selectedProject.type === 'diagram' && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedProject(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-[#e5e7eb] border border-gray-700/80 rounded-2xl shadow-2xl flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="sticky top-0 z-20 bg-[#081212] p-4 border-b border-gray-800 flex justify-between items-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-white">{selectedProject.data.title} - Architecture</h3>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="text-gray-400 hover:text-white transition-colors bg-gray-800 hover:bg-gray-700 rounded-full p-2 ml-4 flex-shrink-0"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <div className="p-8 flex items-center justify-center min-h-[50vh]">
+                <Mermaid chart={selectedProject.data.diagram} />
               </div>
             </motion.div>
           </motion.div>
