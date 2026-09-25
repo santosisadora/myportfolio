@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Enterprise SecOps Vulnerability Triage Agent",
     icon: <Lock className="w-8 h-8 text-primary" />,
-    image: "/rag-secops-agent-preview-image.png",
+    image: "/vuln-rag-demo-preview.png",
     description: "An autonomous, cloud-native AI security agent built with LangGraph, FastAPI, and AWS ECS that correlates live NIST NVD vulnerability intelligence.",
     metrics: [
       { label: "Context & Token Compression", value: "Two-stage retrieval (PGVector k=10 → FlashRank top_n=2) reduces prompt payload by 80% while preserving 100% policy faithfulness." },
@@ -175,10 +175,10 @@ const Projects = () => {
               <p className="text-gray-400 mb-6 text-sm flex-grow">{project.description}</p>
               
               <div className="mb-6 bg-[#060f0f]/80 p-4 rounded-xl border border-primary/20">
-                <h4 className="text-sm font-bold text-primary mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-bold text-primary mb-2 flex items-center gap-2">
                   <Activity className="w-4 h-4" /> 📊 System Metrics & Trade-offs
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {project.metrics.map((metric, i) => (
                     <li key={i} className="text-xs text-gray-300 leading-relaxed">
                       <strong className="text-primary/90">{metric.label}:</strong> {metric.value}
@@ -187,13 +187,13 @@ const Projects = () => {
                 </ul>
               </div>
 
-              <div className="flex flex-wrap gap-3 mt-auto">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-auto">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
                   <Code className="w-4 h-4" />
                   GitHub
                 </a>
                 {project.liveApp && (
-                  <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-primary/20 border border-primary/50 text-white rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap">
+                  <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-primary/20 border border-primary/50 text-white rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap">
                     <Globe className="w-4 h-4" />
                     Try Agent
                   </a>
@@ -203,7 +203,7 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-primary/10 border border-primary/30 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap"
+                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-primary/10 border border-primary/30 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap"
                   >
                     <Play className="w-4 h-4" />
                     Watch demo
@@ -211,7 +211,7 @@ const Projects = () => {
                 ) : (
                   <button 
                     disabled
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-gray-800/50 border border-gray-700/50 text-gray-500 rounded text-sm cursor-not-allowed font-medium whitespace-nowrap"
+                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-gray-800/50 border border-gray-700/50 text-gray-500 rounded text-sm cursor-not-allowed font-medium whitespace-nowrap"
                   >
                     <ExternalLink className="w-4 h-4" />
                     No Demo
@@ -220,7 +220,7 @@ const Projects = () => {
                 {project.diagram && (
                   <button 
                     onClick={() => setSelectedProject({ type: 'diagram', data: project })}
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-[#081212] border border-primary/40 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap shadow-[0_0_10px_rgba(20,184,166,0.1)]"
+                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#081212] border border-primary/40 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap shadow-[0_0_10px_rgba(20,184,166,0.1)]"
                   >
                     <Network className="w-4 h-4" />
                     Architecture
@@ -229,7 +229,7 @@ const Projects = () => {
                 {project.fullDescription && (
                   <button 
                     onClick={() => setSelectedProject({ type: 'details', data: project })}
-                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 border border-gray-600 text-gray-300 rounded text-sm hover:bg-gray-700 hover:text-white transition-colors font-medium whitespace-nowrap"
+                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 border border-gray-600 text-gray-300 rounded text-sm hover:bg-gray-700 hover:text-white transition-colors font-medium whitespace-nowrap"
                   >
                     <Info className="w-4 h-4" />
                     Details
