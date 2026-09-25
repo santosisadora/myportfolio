@@ -25,7 +25,7 @@ const projects = [
       Router -.-> CW["CloudWatch"]`,
     github: "https://github.com/santosisadora/ai-agent-vulnerability-triage/tree/main",
     demo: "/vuln-rag-agent-final-DEMO.mp4",
-    liveApp: "https://dvd40fbcl8i24.cloudfront.net/",
+    liveApp: "https://secops.isadorasantos.app/",
     fullDescription: (
       <div className="space-y-6 text-left mt-8 border-t border-gray-700/50 pt-8">
         <div>
