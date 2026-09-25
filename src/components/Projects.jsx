@@ -9,11 +9,17 @@ const projects = [
     icon: <Lock className="w-8 h-8 text-primary" />,
     image: "/vuln-rag-demo-preview.png",
     description: "An autonomous, cloud-native AI security agent built with LangGraph, FastAPI, and AWS ECS that correlates live NIST NVD vulnerability intelligence.",
-    metrics: [
-      { label: "Context & Token Compression", value: "Two-stage retrieval (PGVector k=10 → FlashRank top_n=2) reduces prompt payload by 80% while preserving 100% policy faithfulness." },
-      { label: "Latency & Cost Control", value: "Semantic LLM caching bypasses vector DB on repeat/off-topic inputs, cutting latency to <200ms and cold-path NVD triage to ~4.2s (p95)." },
-      { label: "Zero-Trust State Trade-off", value: "Chose external AsyncPostgresSaver connection pooling (max_size=20) over in-memory checkpointers so HITL pauses survive ECS container restarts." }
-    ],
+    metrics: {
+      kpis: [
+        { value: "-80%", label: "Token Payload" },
+        { value: "100%", label: "Policy Faithfulness" },
+        { value: "<200ms", label: "Cached Latency" }
+      ],
+      bullets: [
+        { lead: "Two-Stage Reranking:", text: "PGVector (k=10) → FlashRank (top_n=2) cuts context bloat by 80% while passing LangSmith CI gates." },
+        { lead: "Zero-Trust State:", text: "AsyncPostgresSaver (max_size=20) persists HITL pauses across ECS restarts (~4.2s cold p95)." }
+      ]
+    },
     diagram: `graph TD
       Client["CloudFront (S3 UI + ALB Proxy)"] --> FastAPI["FastAPI (Basic Auth + SlowAPI 5/min)"]
       FastAPI --> Router["LangGraph Router"]
@@ -84,11 +90,17 @@ const projects = [
     icon: <Shield className="w-8 h-8 text-primary" />,
     image: "/mlflow-secure-mlops-pipeline-demo-image.png",
     description: "A production-grade, security-first CI/CD pipeline demonstrating enterprise best practices for operationalizing machine learning models.",
-    metrics: [
-      { label: "Security Gate Metrics", value: "Automated Trivy container & dependency scanning blocks 100% of Critical/High CVEs pre-deployment in <90s CI runtime." },
-      { label: "Registry & Rollback", value: "MLflow Model Registry versioning paired with automated rollback triggers if validation F1/AUC drops below baseline threshold." },
-      { label: "Deployment Depth", value: "Kubernetes deployment manifests ensure robust, scalable, and isolated production lifecycle depth." }
-    ],
+    metrics: {
+      kpis: [
+        { value: "100%", label: "Crit CVEs Blocked" },
+        { value: "<90s", label: "CI Security Gate" },
+        { value: "Auto", label: "Drift Rollback" }
+      ],
+      bullets: [
+        { lead: "DevSecOps Gate:", text: "Automated Trivy container & dependency scanning blocks 100% of High/Critical CVEs pre-deploy." },
+        { lead: "Registry & Rollback:", text: "MLflow Registry stage gates trigger automated rollback on F1/AUC drops across K8s manifests." }
+      ]
+    },
     diagram: `graph TD
       Push["GitHub Push"] --> Actions["GitHub Actions"]
       Actions --> Trivy["Trivy Security Gate (Fail on Critical/High CVE)"]
@@ -104,11 +116,17 @@ const projects = [
     icon: <BarChart3 className="w-8 h-8 text-primary" />,
     image: "/self-healing-agentic-etl-preview-image.png",
     description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors.",
-    metrics: [
-      { label: "Specific Failure Modes Healed", value: "Intercepts upstream schema drift / renamed fields, malformed JSON/Pydantic validation errors, and HTTP 429 rate-limit backoffs." },
-      { label: "Recovery vs. DLQ Rate", value: "Autonomously resolves 94% of schema/formatting exceptions within ≤2 self-correction loops." },
-      { label: "Dead-Letter Queue", value: "Routes the remaining 6% of unrecoverable payloads to a Dead-Letter Queue (DLQ) with structured failure traces." }
-    ],
+    metrics: {
+      kpis: [
+        { value: "94%", label: "Auto-Healed" },
+        { value: "≤2", label: "Retry Loops" },
+        { value: "6%", label: "DLQ Routed" }
+      ],
+      bullets: [
+        { lead: "Autonomous Recovery:", text: "Intercepts schema drift, malformed JSON/Pydantic errors, and HTTP 429 backoffs automatically." },
+        { lead: "Fault Isolation:", text: "Routes unrecoverable payloads to a Dead-Letter Queue (DLQ) with structured failure traces." }
+      ]
+    },
     diagram: `graph TD
       Ingest["Ingestion Source"] --> Extractor["Extractor Agent"]
       Extractor --> Validator["Pydantic Schema Validator"]
@@ -152,53 +170,68 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="glass-panel rounded-2xl p-6 flex flex-col h-full group transition-all duration-500 hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]"
             >
-              {project.image ? (
-                <div 
-                  className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20 cursor-pointer relative"
-                  onClick={() => setSelectedProject({ type: 'image', data: project })}
-                >
-                  <img 
-                    src={project.image} 
-                    alt={`${project.title} preview`}
-                    className="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full border border-white/20">Click to enlarge</span>
+              <div className="flex flex-col flex-grow">
+                {project.image ? (
+                  <div 
+                    className="mb-6 rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-primary/50 transition-colors bg-black/20 cursor-pointer relative"
+                    onClick={() => setSelectedProject({ type: 'image', data: project })}
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={`${project.title} preview`}
+                      className="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full border border-white/20">Click to enlarge</span>
+                    </div>
                   </div>
+                ) : (
+                  <div className="mb-6 p-4 bg-primary/10 rounded-lg inline-block w-fit group-hover:scale-110 transition-transform duration-300">
+                    {project.icon}
+                  </div>
+                )}
+                
+                <div className="lg:min-h-[130px] flex flex-col">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-gray-400 mb-6 text-sm flex-grow">{project.description}</p>
                 </div>
-              ) : (
-                <div className="mb-6 p-4 bg-primary/10 rounded-lg inline-block w-fit group-hover:scale-110 transition-transform duration-300">
-                  {project.icon}
+                
+                <div className="mb-6 bg-[#060f0f]/80 p-4 rounded-xl border border-primary/20">
+                  <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <Activity className="w-4 h-4" /> SYSTEM METRICS & TRADE-OFFS
+                  </h4>
+                  <div className="grid grid-cols-3 gap-2 border-b border-white/10 pb-3 mb-4 text-center">
+                    {project.metrics.kpis.map((kpi, i) => (
+                      <div key={i} className="flex flex-col items-center justify-center">
+                        <span className="text-base font-bold text-white">{kpi.value}</span>
+                        <span className="text-[10px] uppercase tracking-wider text-gray-400 mt-1">{kpi.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <ul className="space-y-3 text-xs leading-relaxed text-gray-300">
+                    {project.metrics.bullets.map((bullet, i) => (
+                      <li key={i}>
+                        <strong className="text-primary">{bullet.lead}</strong> {bullet.text}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              )}
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{project.title}</h3>
-              <p className="text-gray-400 mb-6 text-sm flex-grow">{project.description}</p>
-              
-              <div className="mb-6 bg-[#060f0f]/80 p-4 rounded-xl border border-primary/20">
-                <h4 className="text-sm font-bold text-primary mb-2 flex items-center gap-2">
-                  <Activity className="w-4 h-4" /> 📊 System Metrics & Trade-offs
-                </h4>
-                <ul className="space-y-2">
-                  {project.metrics.map((metric, i) => (
-                    <li key={i} className="text-xs text-gray-300 leading-relaxed">
-                      <strong className="text-primary/90">{metric.label}:</strong> {metric.value}
-                    </li>
-                  ))}
-                </ul>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-auto">
+              <div className="grid grid-cols-2 gap-2.5 mt-auto">
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
                   <Code className="w-4 h-4" />
                   GitHub
                 </a>
+                
                 {project.liveApp && (
                   <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-primary/20 border border-primary/50 text-white rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap">
                     <Globe className="w-4 h-4" />
                     Try Agent
                   </a>
                 )}
-                {project.demo !== "#" ? (
+                
+                {project.demo !== "#" && (
                   <a 
                     href={project.demo}
                     target="_blank"
@@ -208,28 +241,22 @@ const Projects = () => {
                     <Play className="w-4 h-4" />
                     Watch demo
                   </a>
-                ) : (
-                  <button 
-                    disabled
-                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-gray-800/50 border border-gray-700/50 text-gray-500 rounded text-sm cursor-not-allowed font-medium whitespace-nowrap"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    No Demo
-                  </button>
                 )}
+                
                 {project.diagram && (
                   <button 
                     onClick={() => setSelectedProject({ type: 'diagram', data: project })}
-                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#081212] border border-primary/40 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap shadow-[0_0_10px_rgba(20,184,166,0.1)]"
+                    className={`w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#081212] border border-primary/40 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap shadow-[0_0_10px_rgba(20,184,166,0.1)] ${project.title === 'Secure MLOps Pipeline' ? 'col-span-2' : ''}`}
                   >
                     <Network className="w-4 h-4" />
                     Architecture
                   </button>
                 )}
+                
                 {project.fullDescription && (
                   <button 
                     onClick={() => setSelectedProject({ type: 'details', data: project })}
-                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 border border-gray-600 text-gray-300 rounded text-sm hover:bg-gray-700 hover:text-white transition-colors font-medium whitespace-nowrap"
+                    className="col-span-2 w-full flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 border border-gray-600 text-gray-300 rounded text-sm hover:bg-gray-700 hover:text-white transition-colors font-medium whitespace-nowrap"
                   >
                     <Info className="w-4 h-4" />
                     Details
@@ -300,7 +327,6 @@ const Projects = () => {
               </div>
               
               <div className="p-4 sm:p-6">
-
                 {selectedProject.data.liveApp && (
                   <div className="mt-8 bg-primary/10 border border-primary/30 rounded-xl p-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
                     <div>
@@ -320,7 +346,6 @@ const Projects = () => {
                 )}
 
                 {selectedProject.data.fullDescription}
-
               </div>
             </motion.div>
           </motion.div>
