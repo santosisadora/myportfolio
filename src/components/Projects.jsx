@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Code, Globe, Info, Shield, BarChart3, Lock, Server, Cpu, Database as DbIcon, ExternalLink, X, Activity, Network } from 'lucide-react';
+import { Play, Code, Globe, Info, Shield, BarChart3, Lock, Server, Cpu, Database as DbIcon, ExternalLink, X, Activity, Network, Monitor } from 'lucide-react';
 import Mermaid from './Mermaid';
 
 const projects = [
