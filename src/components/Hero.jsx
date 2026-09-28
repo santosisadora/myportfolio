@@ -21,9 +21,6 @@ const Hero = () => {
             ISADORA<br />SANTOS
           </h1>
           
-          <p className="text-lg text-gray-400 max-w-xl leading-relaxed">
-            Engineering production-grade AI systems, stateful multi-agent workflows, and automated cloud infrastructure. Focused on deterministic reliability, low-latency orchestration, and security-first CI/CD at scale.
-          </p>
         </motion.div>
 
         {/* Right Column: Profile Card */}
@@ -47,7 +44,7 @@ const Hero = () => {
             <div>
               <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-3">About Isadora</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Specialized in building resilient AI pipelines, automated vulnerability management, and robust CI/CD workflows. Passionate about minimalism, elegant code, and secure infrastructure.
+                Engineering production-grade AI systems, stateful multi-agent workflows, and automated cloud infrastructure. Focused on deterministic reliability, low-latency orchestration, and security-first CI/CD at scale.
               </p>
               
               <p className="text-teal-accent text-sm mb-6 flex items-center gap-2">
