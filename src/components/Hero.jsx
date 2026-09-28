@@ -22,7 +22,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg text-gray-400 max-w-xl leading-relaxed">
-            Crafting thoughtful, data-driven experiences that merge advanced AI capabilities with secure, scalable backend architectures.
+            Engineering production-grade AI systems, stateful multi-agent workflows, and automated cloud infrastructure. Focused on deterministic reliability, low-latency orchestration, and security-first CI/CD at scale.
           </p>
         </motion.div>
 
