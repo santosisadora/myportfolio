@@ -5,27 +5,113 @@
 
 @layer base {
   body {
-    @apply bg-[#050a0a] text-gray-200 font-sans antialiased selection:bg-primary/30;
+    @apply font-sans antialiased selection:bg-primary/30;
+    background: linear-gradient(135deg, #020d0d 0%, #041a1a 40%, #071f2a 100%);
+    background-attachment: fixed;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #f8fafc;
   }
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-[#081212]/60 backdrop-blur-xl border border-gray-700/30;
-  }
-  
-  .glass-hover {
-    @apply hover:border-primary/50 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] transition-all duration-500;
-  }
-
+  /* Glass Card / Panel Style */
   .glass-panel {
-    @apply bg-[#060f0f]/80 backdrop-blur-xl border border-primary/20 shadow-[0_0_40px_rgba(20,184,166,0.08)];
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    transition: all 0.4s ease;
   }
 
-  .glass-panel-heavy {
-    @apply bg-[#060f0f]/90 backdrop-blur-xl border border-primary/40 shadow-[0_0_50px_rgba(20,184,166,0.15)];
+  /* Hover State for Cards */
+  .glass-panel-hover:hover {
+    border-color: rgba(20, 184, 166, 0.4);
+    box-shadow:
+      0 8px 40px rgba(0,0,0,0.5),
+      0 0 20px rgba(20,184,166,0.15),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+    transform: translateY(-2px);
   }
-  
+
+  /* Navbar */
+  .glass-nav {
+    background: rgba(2, 15, 15, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  /* Metric Badges / Stat chips */
+  .glass-metric-badge {
+    background: rgba(20, 184, 166, 0.08);
+    border: 1px solid rgba(20, 184, 166, 0.25);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2dd4bf;
+  }
+
+  /* Outlined glass buttons */
+  .glass-button {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .glass-button:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+
+  /* Teal primary button */
+  .glass-button-primary {
+    background: rgba(20, 184, 166, 0.2);
+    border: 1px solid rgba(20, 184, 166, 0.5);
+    color: #2dd4bf;
+    box-shadow: 0 0 16px rgba(20, 184, 166, 0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .glass-button-primary:hover {
+    border-color: rgba(20, 184, 166, 0.8);
+    box-shadow: 0 0 24px rgba(20, 184, 166, 0.4);
+    transform: translateY(-1px);
+  }
+
+  /* Skills chips */
+  .glass-skill-chip {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* Section dividers */
+  .glass-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
   .text-glow {
     text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
   }

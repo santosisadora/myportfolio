@@ -6,7 +6,7 @@ import Mermaid from './Mermaid';
 const projects = [
   {
     title: "Enterprise SecOps Vulnerability Triage Agent",
-    icon: <Lock className="w-8 h-8 text-primary" />,
+    icon: <Lock className="w-8 h-8 text-teal-accent" />,
     image: "/vuln-rag-demo-preview.png",
     description: "An autonomous, cloud-native AI security agent built with LangGraph, FastAPI, and AWS ECS that correlates live NIST NVD vulnerability intelligence.",
     metrics: {
@@ -33,7 +33,7 @@ const projects = [
     demo: "/vuln-rag-agent-final-DEMO.mp4",
     liveApp: "https://secops.isadorasantos.app/",
     fullDescription: (
-      <div className="space-y-6 text-left mt-8 border-t border-gray-700/50 pt-8">
+      <div className="space-y-6 text-left mt-8 glass-divider pt-8">
         <div>
           <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2">🛡️ What the App Does & Business Problem Solved</h4>
           <p className="mb-4 text-sm text-gray-300"><strong>Eliminates SOC Alert Fatigue & Context Switching:</strong> Security analysts typically spend 30–60 minutes per CVE manually cross-referencing NIST severity scores, internal CMDB asset spreadsheets, and static compliance documents before opening an engineering ticket. This agent compresses that entire triage-to-ticket lifecycle into under 10 seconds.</p>
@@ -57,27 +57,27 @@ const projects = [
           <h4 className="text-xl font-bold text-white mb-4 mt-8">Complete Tech Stack</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50 transition-colors hover:border-primary/50">
-              <span className="text-primary font-bold flex items-center gap-2 mb-2"><Cpu className="w-4 h-4" /> AI & Agent Orchestration</span>
+              <span className="text-teal-accent font-bold flex items-center gap-2 mb-2"><Cpu className="w-4 h-4" /> AI & Agent Orchestration</span>
               <span className="text-xs text-gray-400">LangGraph, LangChain, Google Gemini 3.8 Flash, Google Generative AI Embeddings, InMemoryCache</span>
             </div>
             <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50 transition-colors hover:border-primary/50">
-              <span className="text-primary font-bold flex items-center gap-2 mb-2"><DbIcon className="w-4 h-4" /> RAG, Reranking & DB</span>
+              <span className="text-teal-accent font-bold flex items-center gap-2 mb-2"><DbIcon className="w-4 h-4" /> RAG, Reranking & DB</span>
               <span className="text-xs text-gray-400">Amazon RDS (PostgreSQL), PGVector, FlashRank, AsyncPostgresSaver, SQLAlchemy, psycopg3</span>
             </div>
             <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50 transition-colors hover:border-primary/50">
-              <span className="text-primary font-bold flex items-center gap-2 mb-2"><Server className="w-4 h-4" /> Backend API & Integrations</span>
+              <span className="text-teal-accent font-bold flex items-center gap-2 mb-2"><Server className="w-4 h-4" /> Backend API & Integrations</span>
               <span className="text-xs text-gray-400">Python 3.11+, FastAPI, Server-Sent Events (SSE), Pydantic, NIST NVD REST API, Jira REST API</span>
             </div>
             <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50 transition-colors hover:border-primary/50">
-              <span className="text-primary font-bold flex items-center gap-2 mb-2"><Monitor className="w-4 h-4" /> Observability & Monitoring</span>
+              <span className="text-teal-accent font-bold flex items-center gap-2 mb-2"><Monitor className="w-4 h-4" /> Observability & Monitoring</span>
               <span className="text-xs text-gray-400">LangSmith, AWS CloudWatch Logs, ALB Target Group Health Probes</span>
             </div>
             <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50 transition-colors hover:border-primary/50">
-              <span className="text-primary font-bold flex items-center gap-2 mb-2"><Lock className="w-4 h-4" /> Security & Access Control</span>
+              <span className="text-teal-accent font-bold flex items-center gap-2 mb-2"><Lock className="w-4 h-4" /> Security & Access Control</span>
               <span className="text-xs text-gray-400">HTTP Basic Auth, SlowAPI, AWS SSM Parameter Store, RBAC</span>
             </div>
             <div className="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50 transition-colors hover:border-primary/50">
-              <span className="text-primary font-bold flex items-center gap-2 mb-2"><Globe className="w-4 h-4" /> Cloud Infrastructure & CI/CD</span>
+              <span className="text-teal-accent font-bold flex items-center gap-2 mb-2"><Globe className="w-4 h-4" /> Cloud Infrastructure & CI/CD</span>
               <span className="text-xs text-gray-400">Docker, AWS ECS (Fargate), Amazon ECR, AWS ALB, Amazon CloudFront + S3, GitHub Actions</span>
             </div>
           </div>
@@ -87,7 +87,7 @@ const projects = [
   },
   {
     title: "Secure MLOps Pipeline",
-    icon: <Shield className="w-8 h-8 text-primary" />,
+    icon: <Shield className="w-8 h-8 text-teal-accent" />,
     image: "/mlflow-secure-mlops-pipeline-demo-image.png",
     description: "A production-grade, security-first CI/CD pipeline demonstrating enterprise best practices for operationalizing machine learning models.",
     metrics: {
@@ -113,7 +113,7 @@ const projects = [
   },
   {
     title: "Self-Healing Agentic ETL",
-    icon: <BarChart3 className="w-8 h-8 text-primary" />,
+    icon: <BarChart3 className="w-8 h-8 text-teal-accent" />,
     image: "/self-healing-agentic-etl-preview-image.png",
     description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors.",
     metrics: {
@@ -155,7 +155,7 @@ const Projects = () => {
           <div className="flex items-center gap-4 mb-2">
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Featured Projects</h2>
           </div>
-          <div className="w-full h-[1px] bg-gray-800 relative">
+          <div className="w-full glass-divider relative">
             <div className="absolute top-0 left-0 w-64 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
@@ -168,7 +168,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-panel rounded-2xl p-6 flex flex-col h-full group transition-all duration-500 hover:shadow-[0_0_40px_rgba(20,184,166,0.2)]"
+              className="glass-panel glass-panel-hover p-6 flex flex-col h-full group"
             >
               <div className="flex flex-col flex-grow">
                 {project.image ? (
@@ -196,22 +196,22 @@ const Projects = () => {
                   <p className="text-gray-400 mb-6 text-sm flex-grow">{project.description}</p>
                 </div>
                 
-                <div className="mb-6 bg-[#060f0f]/80 p-4 rounded-xl border border-primary/20">
-                  <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+                <div className="mb-6 glass-panel p-4">
+                  <h4 className="text-xs font-bold text-teal-accent uppercase tracking-widest mb-4 flex items-center gap-2">
                     <Activity className="w-4 h-4" /> SYSTEM METRICS & TRADE-OFFS
                   </h4>
-                  <div className="grid grid-cols-3 gap-2 border-b border-white/10 pb-3 mb-4 text-center">
+                  <div className="grid grid-cols-3 gap-2 glass-divider pb-3 mb-4 text-center">
                     {project.metrics.kpis.map((kpi, i) => (
-                      <div key={i} className="flex flex-col items-center justify-center">
-                        <span className="text-base font-bold text-white">{kpi.value}</span>
-                        <span className="text-[10px] uppercase tracking-wider text-gray-400 mt-1">{kpi.label}</span>
+                      <div key={i} className="flex flex-col items-center justify-center glass-metric-badge">
+                        <span className="">{kpi.value}</span>
+                        <span className="text-[11px] uppercase tracking-wider text-gray-400 mt-1">{kpi.label}</span>
                       </div>
                     ))}
                   </div>
                   <ul className="space-y-3 text-xs leading-relaxed text-gray-300">
                     {project.metrics.bullets.map((bullet, i) => (
                       <li key={i}>
-                        <strong className="text-primary">{bullet.lead}</strong> {bullet.text}
+                        <strong className="text-teal-accent">{bullet.lead}</strong> {bullet.text}
                       </li>
                     ))}
                   </ul>
@@ -219,13 +219,13 @@ const Projects = () => {
               </div>
 
               <div className="grid grid-cols-2 gap-2.5 mt-auto">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 border border-gray-600 rounded text-sm hover:border-primary hover:text-primary transition-colors whitespace-nowrap">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 text-sm whitespace-nowrap glass-button">
                   <Code className="w-4 h-4" />
                   GitHub
                 </a>
                 
                 {project.liveApp && (
-                  <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-primary/20 border border-primary/50 text-white rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap">
+                  <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button-primary">
                     <Globe className="w-4 h-4" />
                     Try Agent
                   </a>
@@ -236,7 +236,7 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-primary/10 border border-primary/30 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap"
+                    className="w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button-primary"
                   >
                     <Play className="w-4 h-4" />
                     Watch demo
@@ -246,7 +246,7 @@ const Projects = () => {
                 {project.diagram && (
                   <button 
                     onClick={() => setSelectedProject({ type: 'diagram', data: project })}
-                    className={`w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#081212] border border-primary/40 text-primary rounded text-sm hover:bg-primary hover:text-black transition-colors font-medium whitespace-nowrap shadow-[0_0_10px_rgba(20,184,166,0.1)] ${project.title === 'Secure MLOps Pipeline' ? 'col-span-2' : ''}`}
+                    className={`w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button ${project.title === 'Secure MLOps Pipeline' ? 'col-span-2' : ''}`}
                   >
                     <Network className="w-4 h-4" />
                     Architecture
@@ -256,7 +256,7 @@ const Projects = () => {
                 {project.fullDescription && (
                   <button 
                     onClick={() => setSelectedProject({ type: 'details', data: project })}
-                    className="col-span-2 w-full flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 border border-gray-600 text-gray-300 rounded text-sm hover:bg-gray-700 hover:text-white transition-colors font-medium whitespace-nowrap"
+                    className="col-span-2 w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button"
                   >
                     <Info className="w-4 h-4" />
                     Details
@@ -287,7 +287,7 @@ const Projects = () => {
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute -top-12 right-0 text-white hover:text-primary transition-colors p-2"
+                className="absolute -top-12 right-0 text-white hover:text-teal-accent transition-colors p-2"
               >
                 <X className="w-8 h-8" />
               </button>
@@ -313,10 +313,10 @@ const Projects = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-[#050a0a] border border-gray-700/80 rounded-2xl shadow-2xl flex flex-col scrollbar-thin scrollbar-thumb-gray-600"
+              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-transparent border border-gray-700/80 rounded-2xl shadow-2xl flex flex-col scrollbar-thin scrollbar-thumb-gray-600"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="sticky top-0 z-20 bg-[#081212]/90 backdrop-blur-md p-4 border-b border-gray-800 flex justify-between items-center">
+              <div className="sticky top-0 z-20 glass-nav p-4 flex justify-between items-center">
                 <h3 className="text-xl sm:text-2xl font-bold text-white">{selectedProject.data.title}</h3>
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -364,10 +364,10 @@ const Projects = () => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-[#e5e7eb] border border-gray-700/80 rounded-2xl shadow-2xl flex flex-col"
+              className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto glass-panel flex flex-col shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="sticky top-0 z-20 bg-[#081212] p-4 border-b border-gray-800 flex justify-between items-center">
+              <div className="sticky top-0 z-20 glass-nav p-4 flex justify-between items-center">
                 <h3 className="text-xl sm:text-2xl font-bold text-white">{selectedProject.data.title} - Architecture</h3>
                 <button
                   onClick={() => setSelectedProject(null)}

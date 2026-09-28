@@ -18,14 +18,14 @@ const Logo = () => (
     </div>
     <div className="flex flex-col justify-center">
       <span className="text-lg font-bold text-white tracking-widest leading-none">ISADORA SANTOS</span>
-      <span className="text-[0.6rem] text-primary tracking-widest uppercase mt-1 font-semibold">AI & MLOps Engineer</span>
+      <span className="text-[0.6rem] text-teal-accent tracking-widest uppercase mt-1 font-semibold">AI & MLOps Engineer</span>
     </div>
   </div>
 );
 
 const Footer = () => {
   return (
-    <footer id="contact" className="border-t border-gray-800 bg-background/80 relative z-10">
+    <footer id="contact" className="glass-divider bg-background/80 relative z-10">
       <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <a href="#" className="flex-shrink-0">
           <Logo />

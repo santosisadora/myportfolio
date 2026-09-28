@@ -18,7 +18,7 @@ const About = () => {
           <div className="flex items-center gap-4 mb-2">
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Beyond the Code</h2>
           </div>
-          <div className="w-full h-[1px] bg-gray-800 relative">
+          <div className="w-full glass-divider relative">
             <div className="absolute top-0 left-0 w-48 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
@@ -35,7 +35,7 @@ const About = () => {
             className="md:col-span-7 glass-panel rounded-2xl p-8 flex flex-col justify-center transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]"
           >
             <div className="flex items-center gap-3 mb-6">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary border border-primary/20">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-teal-accent border border-primary/20">
                 <MapPin className="w-5 h-5" />
               </span>
               <h3 className="text-xl font-bold text-white">Based in Canada</h3>
@@ -62,9 +62,9 @@ const About = () => {
 
             <div className="flex items-center gap-3 mb-6 relative z-10">
               <div className="p-2 bg-primary/10 rounded-lg border border-primary/30">
-                <Sparkles className="w-6 h-6 text-primary animate-pulse" />
+                <Sparkles className="w-6 h-6 text-teal-accent animate-pulse" />
               </div>
-              <h3 className="text-lg font-bold text-primary uppercase tracking-widest">Fun Fact</h3>
+              <h3 className="text-lg font-bold text-teal-accent uppercase tracking-widest">Fun Fact</h3>
             </div>
             
             <p className="text-gray-200 text-lg leading-relaxed relative z-10 font-medium mb-4">

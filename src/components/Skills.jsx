@@ -52,7 +52,7 @@ const Skills = () => {
           <div className="flex items-center gap-4 mb-2">
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Core Skills</h2>
           </div>
-          <div className="w-full h-[1px] bg-gray-800 relative">
+          <div className="w-full glass-divider relative">
             <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
@@ -74,7 +74,7 @@ const Skills = () => {
                 {category.skills.map((skill, i) => (
                   <div
                     key={i}
-                    className="px-4 py-2 rounded-lg bg-gray-800/50 border border-gray-700/50 text-sm font-medium text-gray-300 hover:text-primary hover:border-primary/50 transition-colors cursor-default"
+                    className="px-4 py-2 rounded-lg bg-gray-800/50 border border-gray-700/50 text-sm font-medium text-gray-300 hover:text-teal-accent hover:border-primary/50 transition-colors cursor-default"
                   >
                     {skill}
                   </div>

@@ -50,12 +50,12 @@ const Hero = () => {
                 Specialized in building resilient AI pipelines, automated vulnerability management, and robust CI/CD workflows. Passionate about minimalism, elegant code, and secure infrastructure.
               </p>
               
-              <p className="text-primary text-sm mb-6 flex items-center gap-2">
+              <p className="text-teal-accent text-sm mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                 Available for collaborations.
               </p>
               
-              <div className="flex gap-4 border-t border-gray-800/50 pt-4">
+              <div className="flex gap-4 glass-divider/50 pt-4">
                 <a href="https://www.linkedin.com/in/isadora-santos-/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">LinkedIn</a>
                 <a href="https://github.com/santosisadora" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">GitHub</a>
                 <a href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">Email</a>

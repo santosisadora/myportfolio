@@ -79,11 +79,11 @@ const Contact = () => {
                 rel={link.download || link.url === "#" ? undefined : "noopener noreferrer"}
                 className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-teal-accent group-hover:bg-primary group-hover:text-black transition-all">
                   {link.icon}
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-gray-200 font-bold group-hover:text-primary transition-colors">{link.name}</span>
+                  <span className="text-gray-200 font-bold group-hover:text-teal-accent transition-colors">{link.name}</span>
                   <span className="text-gray-500 text-sm">{link.value}</span>
                 </div>
               </a>

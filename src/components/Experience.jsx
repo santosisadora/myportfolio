@@ -76,7 +76,7 @@ const Experience = () => {
           <div className="flex items-center gap-4 mb-2">
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Experience</h2>
           </div>
-          <div className="w-full h-[1px] bg-gray-800 relative">
+          <div className="w-full glass-divider relative">
             <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
@@ -110,7 +110,7 @@ const Experience = () => {
                   {/* Left Column: Role & Company */}
                   <div className="md:w-1/3 flex flex-col">
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{item.company}</h3>
-                    <h4 className="text-lg font-medium text-primary mb-2">{item.role}</h4>
+                    <h4 className="text-lg font-medium text-teal-accent mb-2">{item.role}</h4>
                     <span className="text-sm font-medium text-gray-500">{item.period}</span>
                   </div>
 

@@ -46,7 +46,7 @@ const Education = () => {
           <div className="flex items-center gap-4 mb-2">
             <h2 className="text-3xl font-bold text-gray-200 tracking-wide">Education</h2>
           </div>
-          <div className="w-full h-[1px] bg-gray-800 relative">
+          <div className="w-full glass-divider relative">
             <div className="absolute top-0 left-0 w-32 h-[2px] bg-primary shadow-[0_0_10px_rgba(20,184,166,0.8)]"></div>
           </div>
         </motion.div>
@@ -62,14 +62,14 @@ const Education = () => {
               className="glass-panel rounded-2xl p-6 flex gap-5 items-start h-full transition-all duration-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]"
             >
               <div className="p-3 bg-primary/10 rounded-full flex-shrink-0 mt-1">
-                <GraduationCap className="w-6 h-6 text-primary" />
+                <GraduationCap className="w-6 h-6 text-teal-accent" />
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-white leading-tight mb-1">{item.degree}</h3>
                 <h4 className="text-sm text-gray-300 font-medium mb-3">{item.institution}</h4>
                 
                 {item.year && (
-                  <div className="inline-flex items-center gap-1.5 text-xs text-primary font-medium bg-primary/10 px-2.5 py-1 rounded-full">
+                  <div className="inline-flex items-center gap-1.5 text-xs text-teal-accent font-medium bg-primary/10 px-2.5 py-1 rounded-full">
                     <Calendar className="w-3.5 h-3.5" />
                     {item.year}
                   </div>

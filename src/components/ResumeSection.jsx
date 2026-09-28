@@ -28,7 +28,7 @@ const ResumeSection = () => {
             href="/Isadora_Santos_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/50 text-primary font-bold rounded-lg hover:bg-primary/10 transition-all hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] w-full sm:w-auto justify-center"
+            className="flex items-center gap-2 px-8 py-4 bg-transparent border border-primary/50 text-teal-accent font-bold rounded-lg hover:bg-primary/10 transition-all hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] w-full sm:w-auto justify-center"
           >
             <Eye className="w-5 h-5" />
             View Resume
