@@ -3,11 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Code, Globe, Info, Shield, BarChart3, Lock, Server, Cpu, Database as DbIcon, ExternalLink, X, Activity, Network, Monitor } from 'lucide-react';
 import Mermaid from './Mermaid';
 
+import vulnRagImg from '../assets/vuln-rag-demo-preview.png';
+import mlopsPipelineImg from '../assets/mlflow-secure-mlops-pipeline-demo-image.png';
+import agenticEtlImg from '../assets/self-healing-agentic-etl-preview-image.png';
+
 const projects = [
   {
     title: "Enterprise SecOps Vulnerability Triage Agent",
     icon: <Lock className="w-8 h-8 text-teal-accent" />,
-    image: "/vuln-rag-demo-preview.png",
+    image: vulnRagImg,
     description: "An autonomous, cloud-native AI security agent built with LangGraph, FastAPI, and AWS ECS that correlates live NIST NVD vulnerability intelligence.",
     metrics: {
       kpis: [
@@ -88,7 +92,7 @@ const projects = [
   {
     title: "Secure MLOps Pipeline",
     icon: <Shield className="w-8 h-8 text-teal-accent" />,
-    image: "/mlflow-secure-mlops-pipeline-demo-image.png",
+    image: mlopsPipelineImg,
     description: "A production-grade, security-first CI/CD pipeline demonstrating enterprise best practices for operationalizing machine learning models.",
     metrics: {
       kpis: [
@@ -114,7 +118,7 @@ const projects = [
   {
     title: "Self-Healing Agentic ETL",
     icon: <BarChart3 className="w-8 h-8 text-teal-accent" />,
-    image: "/self-healing-agentic-etl-preview-image.png",
+    image: agenticEtlImg,
     description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors.",
     metrics: {
       kpis: [
