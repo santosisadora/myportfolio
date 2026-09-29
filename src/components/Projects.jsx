@@ -12,16 +12,12 @@ const projects = [
     title: "Enterprise SecOps Vulnerability Triage Agent",
     icon: <Lock className="w-8 h-8 text-teal-accent" />,
     image: vulnRagImg,
-    description: "An autonomous, cloud-native AI security agent built with LangGraph, FastAPI, and AWS ECS that correlates live NIST NVD vulnerability intelligence.",
+    description: "Eliminates security alert fatigue by automatically investigating live vulnerabilities and generating ready-to-assign remediation tickets.",
     metrics: {
-      kpis: [
-        { value: "-80%", label: "Token Payload" },
-        { value: "100%", label: "Policy Faithfulness" },
-        { value: "<200ms", label: "Cached Latency" }
-      ],
       bullets: [
-        { lead: "Two-Stage Reranking:", text: "PGVector (k=10) → FlashRank (top_n=2) cuts context bloat by 80% while passing LangSmith CI gates." },
-        { lead: "Zero-Trust State:", text: "AsyncPostgresSaver (max_size=20) persists HITL pauses across ECS restarts (~4.2s cold p95)." }
+        { lead: "The Business Problem:", text: "Security teams waste hours manually cross-referencing thousands of daily vulnerability alerts (CVEs) against internal company compliance policies." },
+        { lead: "What It Automates:", text: "Pulls live threat intelligence from NIST, matches vulnerabilities against internal security rules, and drafts prioritized remediation tickets in seconds (Python, LangGraph, FastAPI)." },
+        { lead: "Enterprise Reliability:", text: "Includes Human-in-the-Loop approval gates and persistent database state (PostgreSQL, AWS ECS) so engineers can review and approve critical actions before changes go live." }
       ]
     },
     diagram: `graph TD
@@ -93,16 +89,12 @@ const projects = [
     title: "Secure MLOps Pipeline",
     icon: <Shield className="w-8 h-8 text-teal-accent" />,
     image: mlopsPipelineImg,
-    description: "A production-grade, security-first CI/CD pipeline demonstrating enterprise best practices for operationalizing machine learning models.",
+    description: "Automates the safe delivery of machine learning models from code commit to production while blocking security risks and broken deployments.",
     metrics: {
-      kpis: [
-        { value: "100%", label: "Crit CVEs Blocked" },
-        { value: "<90s", label: "CI Security Gate" },
-        { value: "Auto", label: "Drift Rollback" }
-      ],
       bullets: [
-        { lead: "DevSecOps Gate:", text: "Automated Trivy container & dependency scanning blocks 100% of High/Critical CVEs pre-deploy." },
-        { lead: "Registry & Rollback:", text: "MLflow Registry stage gates trigger automated rollback on F1/AUC drops across K8s manifests." }
+        { lead: "The Business Problem:", text: "Deploying ML models manually is slow and risky—often introducing vulnerable dependencies or allowing degraded models to fail silently in production." },
+        { lead: "What It Automates:", text: "An end-to-end CI/CD workflow (GitHub Actions, Docker, MLflow) that automatically tests code quality, tracks model versions, and packages releases on every push." },
+        { lead: "Enterprise Reliability:", text: "Enforces automated container security scans (Trivy) to block vulnerable builds pre-deployment and triggers automatic rollbacks if live model accuracy drops." }
       ]
     },
     diagram: `graph TD
@@ -119,16 +111,12 @@ const projects = [
     title: "Self-Healing Agentic ETL",
     icon: <BarChart3 className="w-8 h-8 text-teal-accent" />,
     image: agenticEtlImg,
-    description: "A resilient data extraction pipeline that dynamically maps messy, unstructured documents into strict schemas and autonomously corrects validation errors.",
+    description: "Transforms messy, unstructured documents into clean database records—automatically fixing formatting errors that crash traditional data pipelines.",
     metrics: {
-      kpis: [
-        { value: "94%", label: "Auto-Healed" },
-        { value: "≤2", label: "Retry Loops" },
-        { value: "6%", label: "DLQ Routed" }
-      ],
       bullets: [
-        { lead: "Autonomous Recovery:", text: "Intercepts schema drift, malformed JSON/Pydantic errors, and HTTP 429 backoffs automatically." },
-        { lead: "Fault Isolation:", text: "Routes unrecoverable payloads to a Dead-Letter Queue (DLQ) with structured failure traces." }
+        { lead: "The Business Problem:", text: "Traditional data pipelines break whenever a vendor changes a document layout or data format, forcing engineers to stop feature work and fix broken imports manually." },
+        { lead: "What It Automates:", text: "An intelligent extraction workflow (Python, LangGraph, React) that reads unstructured files, maps data into strict schemas, and autonomously corrects validation errors on the fly." },
+        { lead: "Enterprise Reliability:", text: "Prevents pipeline downtime by isolating unreadable files into a safe review queue (PostgreSQL) with clear audit logs, ensuring zero silent data loss." }
       ]
     },
     diagram: `graph TD
@@ -202,16 +190,8 @@ const Projects = () => {
                 
                 <div className="mb-6 glass-panel p-4">
                   <h4 className="text-xs font-bold text-teal-accent uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <Activity className="w-4 h-4" /> SYSTEM METRICS & TRADE-OFFS
+                    <Activity className="w-4 h-4" /> PROJECT HIGHLIGHTS
                   </h4>
-                  <div className="grid grid-cols-3 gap-2 glass-divider pb-3 mb-4 text-center">
-                    {project.metrics.kpis.map((kpi, i) => (
-                      <div key={i} className="flex flex-col items-center justify-center glass-metric-badge">
-                        <span className="">{kpi.value}</span>
-                        <span className="text-[11px] uppercase tracking-wider text-gray-400 mt-1">{kpi.label}</span>
-                      </div>
-                    ))}
-                  </div>
                   <ul className="space-y-3 text-xs leading-relaxed text-gray-300">
                     {project.metrics.bullets.map((bullet, i) => (
                       <li key={i}>
