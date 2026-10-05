@@ -29,7 +29,7 @@ const projects = [
       Saver --> Jira["Jira REST API"]
       Router -.-> LangSmith["LangSmith Evals"]
       Router -.-> CW["CloudWatch"]`,
-    github: "https://github.com/santosisadora/ai-agent-vulnerability-triage/tree/main",
+    github: "https://github.com/santosisadora/vuln-rag-agent",
     demo: "/vuln-rag-agent-final-DEMO.mp4",
     liveApp: "https://secops.isadorasantos.app/",
     fullDescription: (
