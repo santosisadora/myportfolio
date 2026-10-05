@@ -46,12 +46,11 @@ const Hero = () => {
             <div>
               <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-3">About Isadora</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Engineering production-grade AI systems, stateful multi-agent workflows, and automated cloud infrastructure. Focused on deterministic reliability, low-latency orchestration, and security-first CI/CD at scale.
+                Specialized in architecting autonomous AI agents, self-healing data pipelines, and end-to-end MLOps automation. I turn complex, manual enterprise workflows into resilient, observable, and secure production systems.
               </p>
               
               <p className="text-teal-accent text-sm mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                Available for collaborations.
+                🟢 Open to AI, SecOps & Automation roles.
               </p>
               
               <div className="flex gap-4 glass-divider/50 pt-4">

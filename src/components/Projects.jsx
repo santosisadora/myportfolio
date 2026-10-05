@@ -152,6 +152,17 @@ const Projects = () => {
           </div>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10 p-5 glass-panel border-l-4 border-l-primary/60 rounded-r-xl"
+        >
+          <p className="text-sm text-gray-300 leading-relaxed">
+            <strong>🛡️ Compliance & Architecture Note:</strong> All projects showcased below are 100% synthetic, clean-room reference architectures. They are built from scratch using public datasets (e.g., NIST NVD), open-source frameworks, and synthetic mock data to demonstrate enterprise patterns without utilizing any proprietary code, data, or IP from previous employers.
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -188,64 +199,41 @@ const Projects = () => {
                   <p className="text-gray-400 mb-6 text-sm flex-grow">{project.description}</p>
                 </div>
                 
-                <div className="mb-6 glass-panel p-4">
-                  <h4 className="text-xs font-bold text-teal-accent uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <Activity className="w-4 h-4" /> PROJECT HIGHLIGHTS
-                  </h4>
-                  <ul className="space-y-3 text-xs leading-relaxed text-gray-300">
-                    {project.metrics.bullets.map((bullet, i) => (
-                      <li key={i}>
-                        <strong className="text-teal-accent">{bullet.lead}</strong> {bullet.text}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="space-y-4 text-sm leading-relaxed text-gray-300 mt-6 mb-6">
+                  {project.metrics.bullets.map((bullet, i) => (
+                    <li key={i} className="flex flex-col gap-1">
+                      <strong className="text-teal-accent tracking-wide">{bullet.lead}</strong> 
+                      <span>{bullet.text}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="grid grid-cols-2 gap-2.5 mt-auto">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 text-sm whitespace-nowrap glass-button">
-                  <Code className="w-4 h-4" />
-                  GitHub
-                </a>
-                
-                {project.liveApp && (
-                  <a href={project.liveApp} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button-primary">
-                    <Globe className="w-4 h-4" />
-                    Try Agent
-                  </a>
-                )}
-                
-                {project.demo !== "#" && (
-                  <a 
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button-primary"
-                  >
-                    <Play className="w-4 h-4" />
-                    Watch demo
-                  </a>
-                )}
-                
-                {project.diagram && (
-                  <button 
-                    onClick={() => setSelectedProject({ type: 'diagram', data: project })}
-                    className={`w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button ${project.title === 'Secure MLOps Pipeline' ? 'col-span-2' : ''}`}
-                  >
-                    <Network className="w-4 h-4" />
-                    Architecture
-                  </button>
-                )}
-                
-                {project.fullDescription && (
-                  <button 
-                    onClick={() => setSelectedProject({ type: 'details', data: project })}
-                    className="col-span-2 w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap glass-button"
-                  >
-                    <Info className="w-4 h-4" />
-                    Details
-                  </button>
-                )}
+                {[
+                  project.github && { icon: Code, text: "GitHub", href: project.github, type: 'link' },
+                  project.liveApp && { icon: Globe, text: "Try Agent", href: project.liveApp, type: 'link', primary: true },
+                  (project.demo && project.demo !== "#") && { icon: Play, text: "Watch demo", href: project.demo, type: 'link', primary: true },
+                  project.diagram && { icon: Network, text: "Architecture", action: () => setSelectedProject({ type: 'diagram', data: project }), type: 'button' },
+                  project.fullDescription && { icon: Info, text: "Details", action: () => setSelectedProject({ type: 'details', data: project }), type: 'button' }
+                ].filter(Boolean).map((btn, i, arr) => {
+                  const isLastOdd = (i === arr.length - 1) && (arr.length % 2 !== 0);
+                  const btnClass = `w-full flex items-center justify-center gap-2 py-2 px-3 text-sm font-medium whitespace-nowrap ${btn.primary ? 'glass-button-primary' : 'glass-button'} ${isLastOdd ? 'col-span-2' : ''}`;
+                  
+                  if (btn.type === 'link') {
+                    return (
+                      <a key={i} href={btn.href} target="_blank" rel="noopener noreferrer" className={btnClass}>
+                        <btn.icon className="w-4 h-4" /> {btn.text}
+                      </a>
+                    );
+                  } else {
+                    return (
+                      <button key={i} onClick={btn.action} className={btnClass}>
+                        <btn.icon className="w-4 h-4" /> {btn.text}
+                      </button>
+                    );
+                  }
+                })}
               </div>
             </motion.div>
           ))}
