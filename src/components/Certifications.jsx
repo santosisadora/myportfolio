@@ -28,6 +28,20 @@ const certifications = [
     skills: ["LangGraph", "Ambient Agents", "Multi-Agent Systems", "State Persistence", "Human-in-the-Loop"]
   },
   {
+    id: "duke-devops-dataops-mlops",
+    title: "DevOps, DataOps, MLOps",
+    issuer: "Duke University",
+    issuerBadge: "Duke",
+    category: "mlops",
+    date: "2026",
+    credentialId: "T7TQJECHIE4O",
+    verifyUrl: "https://coursera.org/verify/T7TQJECHIE4O",
+    image: "/certificates/duke-devops-dataops-mlops.png",
+    pdf: "/Duke-certificate-DevOps-DataOps-MLOps.pdf",
+    description: "Advanced Duke University credential covering modern operational methodologies across software, data, and machine learning: continuous delivery (CI/CD), data quality automation, and robust production ML deployment.",
+    skills: ["DevOps", "DataOps", "MLOps", "Continuous Delivery", "Cloud Automation"]
+  },
+  {
     id: "duke-python-essentials-mlops",
     title: "Python Essentials for MLOps",
     issuer: "Duke University",
@@ -119,7 +133,7 @@ const additionalCredentials = [
 const categories = [
   { id: "all", label: "All Certificates" },
   { id: "ai-agents", label: "AI Agents & LangChain" },
-  { id: "mlops", label: "MLOps & Python" },
+  { id: "mlops", label: "MLOps & DevOps" },
   { id: "cloud-devops", label: "Cloud & Kubernetes (AWS)" }
 ];
 
