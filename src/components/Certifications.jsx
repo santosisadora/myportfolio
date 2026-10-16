@@ -28,6 +28,20 @@ const certifications = [
     skills: ["LangGraph", "Ambient Agents", "Multi-Agent Systems", "State Persistence", "Human-in-the-Loop"]
   },
   {
+    id: "duke-mlops-platforms-sagemaker-azure",
+    title: "MLOps Platforms: Amazon SageMaker and Azure ML",
+    issuer: "Duke University",
+    issuerBadge: "Duke",
+    category: "mlops",
+    date: "2026",
+    credentialId: "L4CJTJV5D7GG",
+    verifyUrl: "https://coursera.org/verify/L4CJTJV5D7GG",
+    image: "/certificates/duke-mlops-platforms-sagemaker-azure.png",
+    pdf: "/Duke-certificate-MLOps-Platforms-Amazon-SageMaker-and-Azure-ML.pdf",
+    description: "Enterprise MLOps specialization credential authorized by Duke University focusing on operationalizing, training, tuning, and deploying scalable machine learning models on Amazon SageMaker and Microsoft Azure ML.",
+    skills: ["Amazon SageMaker", "Azure ML", "MLOps Platforms", "Model Deployment", "Cloud ML"]
+  },
+  {
     id: "duke-devops-dataops-mlops",
     title: "DevOps, DataOps, MLOps",
     issuer: "Duke University",
