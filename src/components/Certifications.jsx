@@ -28,6 +28,20 @@ const certifications = [
     skills: ["LangGraph", "Ambient Agents", "Multi-Agent Systems", "State Persistence", "Human-in-the-Loop"]
   },
   {
+    id: "duke-python-essentials-mlops",
+    title: "Python Essentials for MLOps",
+    issuer: "Duke University",
+    issuerBadge: "Duke",
+    category: "mlops",
+    date: "2026",
+    credentialId: "90N4JYMAE4RF",
+    verifyUrl: "https://coursera.org/verify/90N4JYMAE4RF",
+    image: "/certificates/duke-python-essentials-mlops.png",
+    pdf: "/Duke-certificate-Python-Essentials-for-MLOps.pdf",
+    description: "Specialized engineering credential authorized by Duke University covering Python design patterns, CLI automation, testing, packaging, and CI/CD pipelines tailored for production MLOps environments.",
+    skills: ["Python", "MLOps", "CI/CD Pipelines", "DevOps", "Testing & Packaging"]
+  },
+  {
     id: "langchain-reliable-agents",
     title: "Foundation: Building Reliable Agents",
     issuer: "LangChain Academy",
@@ -83,9 +97,9 @@ const certifications = [
 
 const additionalCredentials = [
   {
-    title: "MLOps Certification",
+    title: "MLOps - Machine Learning Operations Specialization",
     issuer: "Duke University",
-    date: "2024",
+    date: "In Progress",
     tag: "ML Engineering"
   },
   {
@@ -105,6 +119,7 @@ const additionalCredentials = [
 const categories = [
   { id: "all", label: "All Certificates" },
   { id: "ai-agents", label: "AI Agents & LangChain" },
+  { id: "mlops", label: "MLOps & Python" },
   { id: "cloud-devops", label: "Cloud & Kubernetes (AWS)" }
 ];
 
@@ -156,7 +171,7 @@ const Certifications = () => {
             Certifications & Credentials
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-base">
-            Verified credentials in Autonomous AI Agents, LangGraph Orchestration, LLM Observability, and AWS Cloud Native Infrastructure.
+            Verified credentials in Autonomous AI Agents, LangGraph Orchestration, MLOps Engineering, and AWS Cloud Native Infrastructure.
           </p>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6 shadow-[0_0_12px_rgba(20,184,166,0.6)]"></div>
         </motion.div>
@@ -284,9 +299,21 @@ const Certifications = () => {
                   {cert.credentialId && (
                     <div className="mb-4 pt-3 glass-divider/60 flex items-center justify-between text-[11px] text-gray-400">
                       <span>Credential ID</span>
-                      <span className="font-mono text-gray-300 font-semibold bg-gray-800/60 px-2 py-0.5 rounded">
-                        {cert.credentialId}
-                      </span>
+                      {cert.verifyUrl ? (
+                        <a
+                          href={cert.verifyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-teal-accent hover:underline font-semibold bg-gray-800/60 px-2 py-0.5 rounded flex items-center gap-1"
+                        >
+                          {cert.credentialId}
+                          <ExternalLink className="w-3 h-3 inline" />
+                        </a>
+                      ) : (
+                        <span className="font-mono text-gray-300 font-semibold bg-gray-800/60 px-2 py-0.5 rounded">
+                          {cert.credentialId}
+                        </span>
+                      )}
                     </div>
                   )}
 
@@ -417,9 +444,21 @@ const Certifications = () => {
                   {selectedCert.credentialId && (
                     <div className="text-xs text-gray-300 flex items-center gap-2">
                       <span className="text-gray-400">Credential ID:</span>
-                      <span className="font-mono bg-gray-800 px-2 py-0.5 rounded text-teal-accent font-semibold">
-                        {selectedCert.credentialId}
-                      </span>
+                      {selectedCert.verifyUrl ? (
+                        <a
+                          href={selectedCert.verifyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono bg-gray-800 px-2 py-0.5 rounded text-teal-accent hover:underline font-semibold flex items-center gap-1"
+                        >
+                          {selectedCert.credentialId}
+                          <ExternalLink className="w-3 h-3 inline" />
+                        </a>
+                      ) : (
+                        <span className="font-mono bg-gray-800 px-2 py-0.5 rounded text-teal-accent font-semibold">
+                          {selectedCert.credentialId}
+                        </span>
+                      )}
                     </div>
                   )}
                   <div className="flex flex-wrap gap-1.5">
@@ -434,7 +473,18 @@ const Certifications = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
+                  {selectedCert.verifyUrl && (
+                    <a
+                      href={selectedCert.verifyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 md:flex-none px-4 py-2.5 rounded-lg bg-teal-accent/10 hover:bg-teal-accent text-teal-accent hover:text-black font-semibold text-xs md:text-sm transition-all flex items-center justify-center gap-2 border border-teal-accent/30 hover:shadow-[0_0_15px_rgba(45,212,191,0.3)]"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Verify Online
+                    </a>
+                  )}
                   <a
                     href={encodeURI(selectedCert.pdf)}
                     target="_blank"
