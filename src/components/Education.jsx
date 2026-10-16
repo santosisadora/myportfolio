@@ -4,9 +4,9 @@ import { GraduationCap, Calendar } from 'lucide-react';
 
 const education = [
   {
-    degree: "MLOps - Machine Learning Operations",
+    degree: "MLOps - Machine Learning Operations Specialization",
     institution: "Duke University - U.S",
-    year: "Present"
+    year: "Completed (2026)"
   },
   {
     degree: "AI Software Engineering Specialist Diploma",

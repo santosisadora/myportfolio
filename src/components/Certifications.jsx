@@ -15,17 +15,33 @@ import {
 
 const certifications = [
   {
-    id: "langsmith-ambient-agents",
-    title: "Project: Ambient Agents with LangGraph",
-    issuer: "LangSmith / LangChain Academy",
-    issuerBadge: "LangChain",
-    category: "ai-agents",
+    id: "duke-mlops-specialization",
+    title: "MLOps | Machine Learning Operations Specialization",
+    issuer: "Duke University",
+    issuerBadge: "Duke",
+    category: "mlops",
     date: "2026",
-    credentialId: "jylpoftg26",
-    image: "/certificates/langsmith-ambient-agents.png",
-    pdf: "/LangSmith-certificate-ambient agents-Project.pdf",
-    description: "Hands-on implementation of autonomous ambient agent systems using LangGraph, focusing on state management, persistence, human-in-the-loop controls, and production multi-agent architectures.",
-    skills: ["LangGraph", "Ambient Agents", "Multi-Agent Systems", "State Persistence", "Human-in-the-Loop"]
+    credentialId: "MPO6MHAG0G1A",
+    verifyUrl: "https://coursera.org/verify/specialization/MPO6MHAG0G1A",
+    image: "/certificates/duke-mlops-specialization.png",
+    pdf: "/Duke-certificate-MLOps-Machine-Learning-Operations-Specialization.pdf",
+    description: "Comprehensive 4-course Specialization authorized by Duke University covering end-to-end MLOps: Python fundamentals, DevOps/DataOps automation, SageMaker & Azure ML platforms, MLflow lifecycle tracking, and LLM deployment with Hugging Face.",
+    skills: ["4-Course Specialization", "Amazon SageMaker", "Azure ML", "MLflow", "Hugging Face", "DevOps & DataOps", "LLM Deployment"],
+    featured: true
+  },
+  {
+    id: "duke-mlops-tools-mlflow-huggingface",
+    title: "MLOps Tools: MLflow and Hugging Face",
+    issuer: "Duke University",
+    issuerBadge: "Duke",
+    category: "mlops",
+    date: "2026",
+    credentialId: "CNSXCJC6YC6J",
+    verifyUrl: "https://coursera.org/verify/CNSXCJC6YC6J",
+    image: "/certificates/duke-mlops-tools-mlflow-huggingface.png",
+    pdf: "/Duke-certificate-MLOps-Tools-MLflow-and-Hugging-Face.pdf",
+    description: "Engineering course authorized by Duke University covering ML lifecycle management with MLflow (experiments, model registry, artifact tracking) and deploying production LLMs and transformers with Hugging Face and ONNX.",
+    skills: ["MLflow", "Hugging Face", "Model Registry", "LLM Deployment", "ONNX"]
   },
   {
     id: "duke-mlops-platforms-sagemaker-azure",
@@ -68,6 +84,19 @@ const certifications = [
     pdf: "/Duke-certificate-Python-Essentials-for-MLOps.pdf",
     description: "Specialized engineering credential authorized by Duke University covering Python design patterns, CLI automation, testing, packaging, and CI/CD pipelines tailored for production MLOps environments.",
     skills: ["Python", "MLOps", "CI/CD Pipelines", "DevOps", "Testing & Packaging"]
+  },
+  {
+    id: "langsmith-ambient-agents",
+    title: "Project: Ambient Agents with LangGraph",
+    issuer: "LangSmith / LangChain Academy",
+    issuerBadge: "LangChain",
+    category: "ai-agents",
+    date: "2026",
+    credentialId: "jylpoftg26",
+    image: "/certificates/langsmith-ambient-agents.png",
+    pdf: "/LangSmith-certificate-ambient agents-Project.pdf",
+    description: "Hands-on implementation of autonomous ambient agent systems using LangGraph, focusing on state management, persistence, human-in-the-loop controls, and production multi-agent architectures.",
+    skills: ["LangGraph", "Ambient Agents", "Multi-Agent Systems", "State Persistence", "Human-in-the-Loop"]
   },
   {
     id: "langchain-reliable-agents",
@@ -125,10 +154,10 @@ const certifications = [
 
 const additionalCredentials = [
   {
-    title: "MLOps - Machine Learning Operations Specialization",
-    issuer: "Duke University",
-    date: "In Progress",
-    tag: "ML Engineering"
+    title: "AI Software Engineering Specialist Diploma",
+    issuer: "GRAN University",
+    date: "Present",
+    tag: "AI Engineering"
   },
   {
     title: "Cybersecurity/SecOps Certified Professional",
@@ -254,8 +283,23 @@ const Certifications = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="glass glass-hover rounded-xl overflow-hidden flex flex-col group border border-gray-800/80 hover:border-primary/50 transition-all duration-300 shadow-lg"
+                className={`glass glass-hover rounded-xl overflow-hidden flex flex-col group border transition-all duration-300 shadow-lg ${
+                  cert.featured
+                    ? 'border-teal-accent/70 shadow-[0_0_30px_rgba(45,212,191,0.22)] ring-1 ring-teal-accent/40'
+                    : 'border-gray-800/80 hover:border-primary/50'
+                }`}
               >
+                {cert.featured && (
+                  <div className="bg-gradient-to-r from-primary/30 via-teal-accent/20 to-primary/10 border-b border-primary/40 px-4 py-1.5 flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-teal-accent tracking-wider uppercase flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-teal-accent" /> Featured Specialization
+                    </span>
+                    <span className="text-[10px] text-gray-200 font-medium px-2 py-0.5 rounded bg-black/50 border border-primary/30">
+                      4-Course Series
+                    </span>
+                  </div>
+                )}
+
                 {/* Certificate Image Thumbnail with Hover Zoom & Action Overlay */}
                 <div 
                   className="relative h-52 bg-gray-950 overflow-hidden cursor-pointer group/img border-b border-gray-800/60"
@@ -271,11 +315,16 @@ const Certifications = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent opacity-60 group-hover/img:opacity-40 transition-opacity"></div>
                   
                   {/* Floating Issuer Badge */}
-                  <div className="absolute top-3 left-3">
+                  <div className="absolute top-3 left-3 flex items-center gap-2">
                     <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-900/85 backdrop-blur-md border border-gray-700/60 text-gray-200 shadow-md flex items-center gap-1.5">
                       <Sparkles className="w-3 h-3 text-teal-accent" />
                       {cert.issuerBadge}
                     </span>
+                    {cert.featured && (
+                      <span className="px-2 py-0.5 rounded-md text-[11px] font-bold bg-primary text-black shadow-md">
+                        ★ Top Credential
+                      </span>
+                    )}
                   </div>
 
                   {/* Hover Quick Preview Button Overlay */}
@@ -438,10 +487,17 @@ const Certifications = () => {
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-base md:text-lg font-bold text-white leading-tight">
-                      {selectedCert.title}
-                    </h3>
-                    <p className="text-xs text-gray-400">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-base md:text-lg font-bold text-white leading-tight">
+                        {selectedCert.title}
+                      </h3>
+                      {selectedCert.featured && (
+                        <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-primary text-black shadow-sm">
+                          ★ Featured Specialization
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-gray-400 mt-0.5">
                       {selectedCert.issuer} • {selectedCert.date}
                     </p>
                   </div>
