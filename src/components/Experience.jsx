@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 const experience = [
   {
-    company: "Independent AI & DevSecOps Engineer and Continuous Learning",
-    role: "AI/ML Specialization",
-    period: "2025 - Present",
-    description: "Actively transitioning into advanced AI and MLOps roles through rigorous specialized training.",
+    company: "Independent AI & DevSecOps Engineer",
+    role: "AI & DevSecOps Engineer",
+    period: "May 2025 - Present",
+    description: "Architecting production-grade AI systems, multi-agent workflows, and secure automated cloud infrastructure.",
     highlights: [
-      "MLOps - Machine Learning Operations Certification | Duke University",
-      "Specialization Diploma in AI Engineering | GRAN University",
-      "Google AI Professional Certificate | Google",
+      "Architected production-grade AI applications utilizing Python, LangGraph, and LLMs, backed by secure PostgreSQL infrastructure and enterprise CI/CD practices (Trivy, MLflow, LangSmith)",
+      "Developed DDS na palma da mão, an interactive WebAR workplace safety application using A-Frame and MindAR, translating specialized safety protocols into intuitive digital formats for end-users",
+      "Built seamless integrations connecting intelligent agents to persistent databases and external APIs to simulate complex enterprise environments"
     ],
     active: true
   },

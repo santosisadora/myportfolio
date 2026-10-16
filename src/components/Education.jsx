@@ -9,26 +9,24 @@ const education = [
     year: "Completed (2026)"
   },
   {
-    degree: "AI Software Engineering Specialist Diploma",
-    institution: "GRAN - Brazil",
+    degree: "Microsoft Generative AI Engineering",
+    institution: "Microsoft",
     year: "Present"
   },
   {
-    degree: "Google AI Professional Certificate",
-    institution: "Google",
-    year: "In Progress"
+    degree: "Artificial Intelligence Engineering - Masters",
+    institution: "GRAN University",
+    year: "2025"
   },
   {
     degree: "Systems Analysis and Development Diploma",
-    institution: "UNINASSAU - Brazil"
+    institution: "UNINASSAU - Brazil",
+    year: "2022 - 2024"
   },
   {
-    degree: "Computer Programming",
-    institution: "Georgian College - Canada"
-  },
-  {
-    degree: "Specialization in IT Management",
-    institution: "GRAN - Brazil"
+    degree: "Computer Programming Diploma",
+    institution: "Georgian College - Canada",
+    year: "2020 - 2022"
   }
 ];
 
