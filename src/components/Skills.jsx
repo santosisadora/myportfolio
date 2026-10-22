@@ -32,7 +32,7 @@ const skillCategories = [
   },
   {
     title: "Core & Backend",
-    skills: ["Python", "Java", "SecOps", "SQL", "Git"],
+    skills: ["Python", "Java", "FastAPI", "SQL", "PostgreSQL", "Git"],
     colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
     delay: 0.4
   }

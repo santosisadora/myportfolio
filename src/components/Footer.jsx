@@ -18,7 +18,7 @@ const Logo = () => (
     </div>
     <div className="flex flex-col justify-center">
       <span className="text-lg font-bold text-white tracking-widest leading-none">ISADORA SANTOS</span>
-      <span className="text-[0.6rem] text-teal-accent tracking-widest uppercase mt-1 font-semibold">AI & MLOps Engineer</span>
+      <span className="text-[0.6rem] text-teal-accent tracking-widest uppercase mt-1 font-semibold">AI & Backend Engineer</span>
     </div>
   </div>
 );
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         
         <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} AI/ML Engineer. All rights reserved.
+          © {new Date().getFullYear()} AI & Backend Engineer. All rights reserved.
         </p>
       </div>
     </footer>

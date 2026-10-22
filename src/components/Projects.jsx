@@ -5,19 +5,19 @@ import Mermaid from './Mermaid';
 
 import vulnRagImg from '../assets/vuln-rag-demo-preview.png';
 import mlopsPipelineImg from '../assets/mlflow-secure-mlops-pipeline-demo-image.png';
-import agenticEtlImg from '../assets/self-healing-agentic-etl-preview-image.png';
+import agenticEtlImg from '../assets/agentic-etl-preview-image.png';
 
 const projects = [
   {
     title: "Enterprise SecOps Vulnerability Triage Agent",
     icon: <Lock className="w-8 h-8 text-teal-accent" />,
     image: vulnRagImg,
-    description: "Eliminates security alert fatigue by automatically investigating live vulnerabilities and generating ready-to-assign remediation tickets.",
+    description: "Eliminates alert fatigue by automatically investigating live vulnerabilities, orchestrating vector retrieval, and generating ready-to-assign tickets through an asynchronous FastAPI backend.",
     metrics: {
       bullets: [
         { lead: "The Business Problem:", text: "Security teams waste hours manually cross-referencing thousands of daily vulnerability alerts (CVEs) against internal company compliance policies." },
-        { lead: "What It Automates:", text: "Pulls live threat intelligence from NIST, matches vulnerabilities against internal security rules, and drafts prioritized remediation tickets in seconds (Python, LangGraph, FastAPI)." },
-        { lead: "Enterprise Reliability:", text: "Includes Human-in-the-Loop approval gates and persistent database state (PostgreSQL, AWS ECS) so engineers can review and approve critical actions before changes go live." }
+        { lead: "What It Automates:", text: "Pulls live threat intelligence from NIST, matches vulnerabilities against corporate rules via two-stage reranked RAG, and drafts prioritized tickets in seconds using Python, LangGraph, and FastAPI." },
+        { lead: "Enterprise Reliability:", text: "Implements stateful Human-in-the-Loop approval checkpoints with persistent database sessions (PostgreSQL, AWS ECS Fargate) to guarantee zero state loss." }
       ]
     },
     diagram: `graph TD
@@ -89,7 +89,7 @@ const projects = [
     title: "Secure MLOps Pipeline",
     icon: <Shield className="w-8 h-8 text-teal-accent" />,
     image: mlopsPipelineImg,
-    description: "Automates the safe delivery of machine learning models from code commit to production while blocking security risks and broken deployments.",
+    description: "Operationalizes machine learning models from code commit to Kubernetes production using Duke University MLOps best practices, automated registry gates, and drift detection.",
     metrics: {
       bullets: [
         { lead: "The Business Problem:", text: "Deploying ML models manually is slow and risky—often introducing vulnerable dependencies or allowing degraded models to fail silently in production." },
@@ -108,10 +108,10 @@ const projects = [
     demo: "/secure-mlops-pipeline-edited-final-demo.mp4"
   },
   {
-    title: "Self-Healing Agentic ETL",
+    title: "Agentic ETL Pipeline",
     icon: <BarChart3 className="w-8 h-8 text-teal-accent" />,
     image: agenticEtlImg,
-    description: "Transforms messy, unstructured documents into clean database records—automatically fixing formatting errors that crash traditional data pipelines.",
+    description: "An autonomous backend data ingestion engine that maps unstructured payloads into strict analytical schemas, automatically resolving validation failures on the fly.",
     metrics: {
       bullets: [
         { lead: "The Business Problem:", text: "Traditional data pipelines break whenever a vendor changes a document layout or data format, forcing engineers to stop feature work and fix broken imports manually." },
@@ -122,7 +122,7 @@ const projects = [
     diagram: `graph TD
       Ingest["Ingestion Source"] --> Extractor["Extractor Agent"]
       Extractor --> Validator["Pydantic Schema Validator"]
-      Validator -- "Invalid Schema / 429" --> Retry["Conditional Retry / Self-Healing Loop (Max N Retries)"]
+      Validator -- "Invalid Schema / 429" --> Retry["Conditional Retry / Schema Recovery Loop (Max N Retries)"]
       Retry --> Extractor
       Retry -- "Max Retries Reached" --> DLQ["Dead-Letter Queue (DLQ)"]
       Validator -- "Valid JSON" --> Target["Target DB"]`,

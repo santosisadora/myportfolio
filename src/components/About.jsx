@@ -68,7 +68,7 @@ const About = () => {
             </div>
             
             <p className="text-gray-200 text-lg leading-relaxed relative z-10 font-medium mb-4">
-              Before diving headfirst into the world of AI and DevSecOps, I was actually a Medical Doctor!
+              Before diving headfirst into the world of AI and Backend Engineering, I was actually a Medical Doctor!
             </p>
             <p className="text-gray-400 leading-relaxed relative z-10">
               I practiced as a family physician for three years back in Brazil. That background in diagnosing complex systems and caring for people completely shaped how I approach technology—with precision, empathy, and a drive to build healthy, resilient architectures.

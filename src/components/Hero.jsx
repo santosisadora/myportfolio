@@ -16,7 +16,7 @@ const Hero = () => {
           className="lg:col-span-7 flex flex-col items-start text-left"
         >
           <p className="text-gray-400 uppercase tracking-widest text-sm mb-4 font-medium">
-            AI Systems & SecOps Engineer
+            AI & Backend Engineer
           </p>
           
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white leading-[1.1] tracking-tight mb-6">
@@ -46,11 +46,11 @@ const Hero = () => {
             <div>
               <h3 className="text-white text-sm font-bold uppercase tracking-wider mb-3">About Isadora</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Specialized in architecting autonomous AI agents, self-healing data pipelines, and end-to-end MLOps automation. I turn complex, manual enterprise workflows into resilient, observable, and secure production systems.
+                AI & Backend Engineer specialized in architecting production-grade agentic workflows, high-throughput backend systems, and resilient data pipelines. Recently specialized in MLOps (Machine Learning Operations) at Duke University, with a strong focus on deterministic reliability, high-throughput backend APIs, and end-to-end ML lifecycle orchestration.
               </p>
               
               <p className="text-teal-accent text-sm mb-6 flex items-center gap-2">
-                🟢 Open to AI, SecOps & Automation roles.
+                🟢 Open to AI, Backend & MLOps engineering roles.
               </p>
               
               <div className="flex gap-4 glass-divider/50 pt-4">

@@ -3,14 +3,15 @@ import { motion } from 'framer-motion';
 
 const experience = [
   {
-    company: "Independent AI & DevSecOps Engineer",
-    role: "AI & DevSecOps Engineer",
+    company: "Independent AI & Backend Engineer",
+    role: "AI & Backend Engineer",
     period: "May 2025 - Present",
-    description: "Architecting production-grade AI systems, multi-agent workflows, and secure automated cloud infrastructure.",
+    description: "Architecting production-grade AI backends, stateful multi-agent workflows, and automated MLOps infrastructure.",
     highlights: [
-      "Architected production-grade AI applications utilizing Python, LangGraph, and LLMs, backed by secure PostgreSQL infrastructure and enterprise CI/CD practices (Trivy, MLflow, LangSmith)",
+      "Engineered scalable asynchronous backends and stateful multi-agent workflows using Python, FastAPI, and LangGraph, backed by durable PostgreSQL checkpointing and external API integrations",
+      "Applied Duke University MLOps specialization practices to operationalize and containerize machine learning pipelines, implementing automated model tracking (MLflow), registry gating, and cloud deployments across AWS and Azure ML",
       "Developed DDS na palma da mão, an interactive WebAR workplace safety application using A-Frame and MindAR, translating specialized safety protocols into intuitive digital formats for end-users",
-      "Built seamless integrations connecting intelligent agents to persistent databases and external APIs to simulate complex enterprise environments"
+      "Designed low-latency REST and SSE endpoints with metadata-filtered vector search (PGVector) and end-to-end observability (LangSmith, CloudWatch)"
     ],
     active: true
   },
