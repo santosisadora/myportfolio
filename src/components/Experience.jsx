@@ -5,7 +5,7 @@ const experience = [
   {
     company: "Independent AI & Backend Engineer",
     role: "AI & Backend Engineer",
-    period: "May 2025 - Present",
+    period: "September 2025 - Present",
     description: "Architecting production-grade AI backends, stateful multi-agent workflows, and automated MLOps infrastructure.",
     highlights: [
       "Engineered scalable asynchronous backends and stateful multi-agent workflows using Python, FastAPI, and LangGraph, backed by durable PostgreSQL checkpointing and external API integrations",
